@@ -1,0 +1,2 @@
+function _ayu_restore_previous_theme
+end

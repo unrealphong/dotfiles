@@ -1,0 +1,94 @@
+############################################
+#
+#
+#
+############################################
+format = """
+[](bg:#c6a0f6 fg:#24273A)\
+$directory\
+[](fg:#c6a0f6 bg:#f5bde6)\
+$git_branch\
+[](fg:#f5bde6 bg:#b7bdf8)\
+$c\
+$golang\
+$nodejs\
+$rust\
+$python\
+[ ](fg:#b7bdf8)\
+"""
+right_format = """\
+[](fg:#c6a0f6)\
+$time\
+[](fg:#c6a0f6)\
+"""
+#24273A
+[directory]
+style = "bg:#c6a0f6 fg:black"
+format = "[$read_only $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+read_only = " "
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+# "code" = "󰈮 "
+
+[conda]
+format = '[$symbol$environment](dimmed green) '
+
+[c]
+symbol = " "
+style = "bg:#b7bdf8 fg:black"
+format = '[ $symbol ($version) ]($style)'
+
+[git_branch]
+symbol = ""
+style = "bg:#f5bde6 fg:black"
+format = '[ $symbol $branch]($style)'
+disabled = false
+
+[git_status]
+style = "bg:red"
+# format = '[$all_status $ahead_behind]($style)'
+format = '[ $all_statuses ($progress_current/$progress_total)]($style)'
+ignore_submodules = true
+untracked = ""
+disabled = false
+
+[golang]
+symbol = " "
+style = "bg:#b7bdf8 fg:black"
+format = '[ $symbol ($version) ]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:#b7bdf8 fg:black"
+format = '[ $symbol ($version) ]($style)'
+
+[python]
+symbol = ""
+style = "bg:#b7bdf8 fg:black"
+format = '[ $symbol ($version)]($style)'
+
+[java]
+symbol = ""
+style = "fg:#ffffff bg:#007396"
+format = '[ $symbol ($version) ]($style)'
+disabled = false
+
+
+[rust]
+symbol = ""
+style = "bg:#b7bdf8 fg:black"
+# format = '[ $symbol ($version) ]($style)'
+format = '[ $symbol ]($style)'
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "bg:#c6a0f6 fg:black" 
+format = '[  $time ]($style)'
+
