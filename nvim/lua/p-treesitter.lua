@@ -1,10 +1,21 @@
-require('orgmode').setup_ts_grammar()
-
-require 'nvim-treesitter.configs'.setup {
-  ensure_installed = { "org", "typescript", "javascript", "html", "css", "tsx", "lua", "rust", "json", "graphql",
+require("nvim-treesitter.configs").setup {
+  ensure_installed = {
+    "org",
+    "typescript",
+    "javascript",
+    "html",
+    "css",
+    "tsx",
+    "lua",
+    "rust",
+    "json",
+    "graphql",
     "regex",
-    "prisma", "markdown",
-    "markdown_inline", "go" },
+    "prisma",
+    "markdown",
+    "markdown_inline",
+    "go",
+  },
 
   sync_install = false,
   auto_install = true,
@@ -12,11 +23,11 @@ require 'nvim-treesitter.configs'.setup {
   highlight = {
     enable = true,
     disable = {},
-    additional_vim_regex_highlighting = { 'org', 'true' },
+    additional_vim_regex_highlighting = { "org", "false" },
   },
   indent = {
     enable = true,
-    disable = {}
+    disable = {},
   },
   autotag = {
     enable = true,
@@ -24,50 +35,53 @@ require 'nvim-treesitter.configs'.setup {
     enable_close = true,
     enable_close_on_slash = true,
     filetypes = {
-      'html',
-      'javascript',
-      'typescript',
-      'javascriptreact',
-      'typescriptreact',
-      'svelte',
-      'vue',
-      'tsx',
-      'jsx',
-      markdown = 'mdx'
+      "html",
+      "javascript",
+      "typescript",
+      "javascriptreact",
+      "typescriptreact",
+      "svelte",
+      "vue",
+      "tsx",
+      "jsx",
+      markdown = "mdx",
     },
   },
   rainbow = {
     enable = false,
     extended_mode = true,
-    max_file_lines = nil
+    max_file_lines = nil,
   },
   context_commentstring = {
     enable = true,
   },
 }
 
-require('template-string').setup({
-  filetypes = { 'typescript', 'javascript', 'typescriptreact', 'javascriptreact', 'python' }, -- filetypes where the plugin is active
-  jsx_brackets = true,                                                                        -- must add brackets to jsx attributes
-  remove_template_string = false,                                                             -- remove backticks when there are no template string
+require("template-string").setup {
+  filetypes = {
+    "typescript",
+    "javascript",
+    "typescriptreact",
+    "javascriptreact",
+    "python",
+  },
+  jsx_brackets = true,
+  remove_template_string = false,
   restore_quotes = {
-    -- quotes used when "remove_template_string" option is enabled
     normal = [[']],
     jsx = [["]],
   },
-})
+}
 
-require 'treesitter-context'.setup {
-  enable = true,            -- Enable this plugin (Can be enabled/disabled later via commands)
-  max_lines = 0,            -- How many lines the window should span. Values <= 0 mean no limit.
-  min_window_height = 0,    -- Minimum editor window height to enable context. Values <= 0 mean no limit.
+require("treesitter-context").setup {
+  enable = true,
+  max_lines = 0,
+  min_window_height = 0,
   line_numbers = true,
-  multiline_threshold = 20, -- Maximum number of lines to collapse for a single context line
-  trim_scope = 'outer',     -- Which context lines to discard if `max_lines` is exceeded. Choices: 'inner', 'outer'
-  mode = 'cursor',          -- Line used to calculate context. Choices: 'cursor', 'topline'
-  -- Separator between context and content. Should be a single character string, like '-'.
-  -- When separator is set, the context will only show up when there are at least 2 lines above cursorline.
+  multiline_threshold = 20,
+  trim_scope = "outer",
+  mode = "cursor",
   separator = nil,
-  zindex = 20,     -- The Z-index of the context window
-  on_attach = nil, -- (fun(buf: integer): boolean) return false to disable attaching
+  zindex = 20,
+  on_attach = nil,
 }
