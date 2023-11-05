@@ -1,10 +1,10 @@
 local keymap = vim.keymap.set
 
-require('lspsaga').setup({
+require("lspsaga").setup {
   ui = {
-    border = 'rounded',
-  }
-})
+    border = "rounded",
+  },
+}
 
 keymap("n", "<leader>k", "<cmd>Lspsaga hover_doc<CR>")
 
@@ -18,3 +18,5 @@ keymap("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>")
 keymap("n", "<leader>r", "<cmd>Lspsaga rename<CR>")
 
 keymap("n", "<leader>o", "<cmd>Lspsaga outline<CR>")
+
+keymap("n", "<C-d>", "<cmd>Lspsaga term_toggle<CR>")
