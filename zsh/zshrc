@@ -81,6 +81,6 @@ if [[ -t 0 ]]; then
 fi
 
 # starship
-# eval "$(starship init zsh)"
+eval "$(starship init zsh)"
 
 
