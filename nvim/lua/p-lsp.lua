@@ -6,7 +6,7 @@ local on_attach = function(client)
   vim.api.nvim_create_autocmd("BufWritePre", {
     group = Format,
     callback = function()
-      local ts = require('typescript').actions
+      local ts = require("typescript").actions
       ts.addMissingImports { sync = true }
       ts.organizeImports { sync = true }
       vim.lsp.buf.format()
@@ -14,101 +14,104 @@ local on_attach = function(client)
   })
 end
 
-
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 local lsp_config = {
   capabilities = capabilities,
-  group = vim.api.nvim_create_augroup('LspFormatting', { clear = true }),
+  group = vim.api.nvim_create_augroup("LspFormatting", { clear = true }),
   on_attach = function(client)
     on_attach(client)
-  end
+  end,
 }
 
-require('rust-tools').setup({
+require("rust-tools").setup {
   server = {
     standalone = true,
-    capabilities = capabilities
-  }
-})
+    capabilities = capabilities,
+  },
+}
 
-require('mason-lspconfig').setup_handlers({
+require("mason-lspconfig").setup_handlers {
   function(server_name)
-    require('lspconfig')[server_name].setup(lsp_config)
+    require("lspconfig")[server_name].setup(lsp_config)
   end,
   lua_ls = function()
-    require('lspconfig').lua_ls.setup(vim.tbl_extend('force', lsp_config, {
+    require("lspconfig").lua_ls.setup(vim.tbl_extend("force", lsp_config, {
       settings = {
         Lua = {
           diagnostics = {
-            globals = { 'vim' }
-          }
-        }
-      }
+            globals = { "vim" },
+          },
+        },
+      },
     }))
   end,
   tsserver = function()
-    require('typescript').setup({
-      server = vim.tbl_extend('force', lsp_config, {
+    require("typescript").setup {
+      server = vim.tbl_extend("force", lsp_config, {
         on_attach = function(client)
           on_attach(client)
         end,
         init_options = {
           preferences = {
-            importModuleSpecifierPreference = 'non-relative',
-            jsxAttributeCompletionStyle = 'none'
-          }
-        }
-      })
-    })
+            importModuleSpecifierPreference = "non-relative",
+            jsxAttributeCompletionStyle = "none",
+          },
+        },
+      }),
+    }
   end,
   solargraph = function()
-    require('lspconfig').solargraph.setup(vim.tbl_extend('force', lsp_config, {
-      cmd = { 'solargraph', 'stdio' },
-      filetypes = { 'ruby' },
+    require("lspconfig").solargraph.setup(vim.tbl_extend("force", lsp_config, {
+      cmd = { "solargraph", "stdio" },
+      filetypes = { "ruby" },
       init_options = {
-        formatting = true
+        formatting = true,
       },
-      root_dir = require('lspconfig.util').root_pattern('Gemfile', '.git'),
+      root_dir = require("lspconfig.util").root_pattern("Gemfile", ".git"),
 
       settings = {
         solargraph = {
           diagnostics = true,
-          completion = true
-        }
-      }
+          completion = true,
+        },
+      },
     }))
   end,
   rust_analyzer = function()
-    require('lspconfig').rust_analyzer.setup(vim.tbl_extend('force', lsp_config, {
+    require("lspconfig").rust_analyzer.setup(vim.tbl_extend("force", lsp_config, {
       settings = {
-        ['rust-analyzer'] = {
+        ["rust-analyzer"] = {
           cargo = {
-            loadOutDirsFromCheck = true
+            loadOutDirsFromCheck = true,
           },
           procMacro = {
-            enable = true
-          }
-        }
-      }
+            enable = true,
+          },
+        },
+      },
     }))
   end,
   clangd = function()
-    require('lspconfig').clangd.setup(vim.tbl_extend('force', lsp_config, {
-      cmd = { 'clangd', '--background-index', '--suggest-missing-includes', '--clang-tidy', '--header-insertion=iwyu' },
-      filetypes = { 'c', 'cpp', 'objc', 'objcpp', 'cuda' },
-      root_dir = require('lspconfig.util').root_pattern('.clangd', 'compile_commands.json', 'compile_flags.txt', '.git'),
+    require("lspconfig").clangd.setup(vim.tbl_extend("force", lsp_config, {
+      cmd = { "clangd", "--background-index", "--suggest-missing-includes", "--clang-tidy", "--header-insertion=iwyu" },
+      filetypes = { "c", "cpp", "objc", "objcpp", "cuda" },
+      root_dir = require("lspconfig.util").root_pattern(
+        ".clangd",
+        "compile_commands.json",
+        "compile_flags.txt",
+        ".git"
+      ),
       settings = {
-        clangd = {
-        }
+        clangd = {},
       },
       init_options = {
         clangdFileStatus = true,
         cache = {
-          directory = '.cache/clangd',
+          directory = ".cache/clangd",
         },
         highlight = {
-          lsRanges = true
+          lsRanges = true,
         },
         index = {
           background = true,
@@ -116,16 +119,16 @@ require('mason-lspconfig').setup_handlers({
           onPackageFileChanged = true,
         },
         client = {
-          snippetSupport = true
-        }
-      }
+          snippetSupport = true,
+        },
+      },
     }))
   end,
   gopls = function()
-    require('lspconfig').gopls.setup(vim.tbl_extend('force', lsp_config, {
-      cmd = { 'gopls', 'serve' },
-      filetypes = { 'go', 'gomod', 'gowork' },
-      root_dir = require('lspconfig.util').root_pattern('go.mod', 'go.work', '.git'),
+    require("lspconfig").gopls.setup(vim.tbl_extend("force", lsp_config, {
+      cmd = { "gopls", "serve" },
+      filetypes = { "go", "gomod", "gowork" },
+      root_dir = require("lspconfig.util").root_pattern("go.mod", "go.work", ".git"),
       settings = {
         gopls = {
           experimentalPostfixCompletions = true,
@@ -134,8 +137,8 @@ require('mason-lspconfig').setup_handlers({
             shadow = true,
           },
           staticcheck = true,
-        }
-      }
+        },
+      },
     }))
   end,
-})
+}

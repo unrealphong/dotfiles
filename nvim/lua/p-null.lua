@@ -1,13 +1,17 @@
-local null_ls = require("null-ls")
+local null_ls = require "null-ls"
 local formatting = null_ls.builtins.formatting
 
-null_ls.setup({
+null_ls.setup {
   sources = {
+
     formatting.stylua,
-    formatting.prettierd.with({
-      extra_args = { "--no-semi", "--single-quote", "--trailing-comma=all",
-        "--single-attribute-per-line"
-      }
-    }),
+    formatting.prettierd.with {
+      extra_args = {
+        "--no-semi",
+        "--single-quote",
+        "--trailing-comma=all",
+        "--single-attribute-per-line",
+      },
+    },
   },
-})
+}
