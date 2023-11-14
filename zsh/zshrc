@@ -14,7 +14,21 @@ fi
 alias reload='source ~/.zshrc'
 
 alias gsync="git checkout master && git fetch upstream && git rebase upstream/master && git push"
-alias gconf='git config user.email "hongphongle115@gmail.com"'
+
+function set_work_git_config() {
+    local repo_path="$(git rev-parse --show-toplevel 2>/dev/null)"
+
+    if [ -n "$repo_path" ]; then
+        cd "$repo_path"
+        git config user.name "phonglenus"
+        git config user.email "hongphongle115@gmail.com"
+        echo "Đã thiết lập thông tin người dùng cho repo workspace."
+    else
+        echo "Không phải là một thư mục Git hoặc repo workspace không được tìm thấy."
+    fi
+}
+
+alias setworkgitconfig="set_work_git_config"
 
 # . /opt/homebrew/etc/profile.d/z.sh
 
