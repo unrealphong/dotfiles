@@ -28,7 +28,7 @@ function set_work_git_config() {
     fi
 }
 
-alias setworkgitconfig="set_work_git_config"
+alias gitconfig="set_work_git_config"
 
 # . /opt/homebrew/etc/profile.d/z.sh
 

@@ -6,8 +6,19 @@ alias c="clear"
 alias ls="exa"
 alias vi="nvim"
 alias prv="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
+alias gitconfig set_work_git_config
 
-function vs --argument-names "path"
+function set_work_git_config
+    echo "Configuring Git user for the project."
+
+    git config user.name phonglenus
+    git config user.email "hongphongle115@gmail.com"
+
+    echo "Git user configured for the project"
+
+end
+
+function vs --argument-names path
     if test -n "$path"
         code $path
     else
