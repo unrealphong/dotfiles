@@ -93,7 +93,7 @@ require("lazy").setup {
   "akinsho/toggleterm.nvim",
 
   "f-person/git-blame.nvim",
-  "github/copilot.vim",
+  -- "github/copilot.vim",
 
   "nvim-tree/nvim-tree.lua",
   "nvim-tree/nvim-web-devicons",

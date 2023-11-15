@@ -22,9 +22,11 @@ function set_work_git_config() {
         cd "$repo_path"
         git config user.name "phonglenus"
         git config user.email "hongphongle115@gmail.com"
-        echo "Đã thiết lập thông tin người dùng cho repo workspace."
+        
+        echo "Git user configured for the project."
+
     else
-        echo "Không phải là một thư mục Git hoặc repo workspace không được tìm thấy."
+        echo "Could not find Git workspace or directory repo."
     fi
 }
 
