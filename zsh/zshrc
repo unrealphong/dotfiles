@@ -32,7 +32,7 @@ function set_work_git_config() {
 
 alias gitconfig="set_work_git_config"
 
-# . /opt/homebrew/etc/profile.d/z.sh
+. /opt/homebrew/etc/profile.d/z.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
