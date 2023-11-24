@@ -9,6 +9,7 @@ require("mason").setup {
 }
 require("mason-tool-installer").setup {
   ensure_installed = {
+    "prettierd",
     "tailwindcss-language-server",
     "gopls",
     "mdx-analyzer",

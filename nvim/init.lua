@@ -85,6 +85,7 @@ require("lazy").setup {
   --   opts = {},
   -- },
   "jose-elias-alvarez/typescript.nvim",
+  "jose-elias-alvarez/null-ls.nvim",
 
   "L3MON4D3/LuaSnip",
   "saadparwaiz1/cmp_luasnip",
@@ -153,6 +154,9 @@ require("lazy").setup {
       { "nvim-treesitter/nvim-treesitter", lazy = true },
     },
     event = "VeryLazy",
+  },
+  {
+    "huggingface/llm.nvim",
   },
 }
 
