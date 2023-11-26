@@ -39,9 +39,6 @@ yabai -m rule --add app="^Telegram$" sticky=on layer=above manage=off
 yabai -m rule --add app="^Discord$" sticky=on layer=above manage=off
 yabai -m rule --add app="^zoom.us$" manage=off
 
-yabai -m rule --add app="^Riot Client$" sticky=on layer=above manage=off
-yabai -m rule --add app="^League of Legends$" sticky=on layer=above manage=off
-
 yabai -m rule --add app="^App Store$" manage=off
 yabai -m rule --add app="^Dictionary$" manage=off
 yabai -m rule --add app="^Archive Utility$" manage=off
@@ -52,6 +49,8 @@ yabai -m rule --add app="^Font Book$" manage=off
 
 
 yabai -m rule --add app="^Docker Desktop$" layer=above manage=off
+yabai -m rule --add app="^MongoDB Compass$" layer=above manage=off
+yabai -m rule --add app="^Notion$" layer=above manage=off
 yabai -m rule --add app="^IntelliJ IDEA$" manage=off
 yabai -m rule --add app="^IntelliJ IDEA$" title="( – )" manage=on
 yabai -m rule --add app="^WebStorm$" manage=off
