@@ -58,6 +58,8 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+[[ -z $TMUX ]] || conda deactivate; conda activate base
+
 # workspace
 export WORKSPACE="$HOME/workspace"
 # development
