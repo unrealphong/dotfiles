@@ -46,6 +46,7 @@ yabai -m rule --add app="^Calendar$" manage=off
 yabai -m rule --add app="^Calculator$" manage=off
 yabai -m rule --add app="^Music$" manage=off
 yabai -m rule --add app="^Font Book$" manage=off
+yabai -m rule --add app="^Firefox$" manage=off
 
 
 yabai -m rule --add app="^Docker Desktop$" layer=above manage=off
