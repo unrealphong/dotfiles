@@ -155,9 +155,9 @@ require("lazy").setup {
     },
     event = "VeryLazy",
   },
-  {
-    "huggingface/llm.nvim",
-  },
+  -- {
+  --   "huggingface/llm.nvim",
+  -- },
 }
 
 require "config.EcoVim"
