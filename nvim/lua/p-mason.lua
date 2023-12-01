@@ -25,7 +25,6 @@ require("mason-tool-installer").setup {
     "typescript-language-server",
     "ember-language-server",
     "vue-language-server",
-    "angular-language-server",
     "astro-language-server",
     "svelte-language-server",
   },
