@@ -23,8 +23,8 @@ config.default_prog = { zsh_path, "-l" }
 
 config.color_scheme = "Tokyo Night"
 config.font = wezterm.font_with_fallback({
-	{ family = "CaskaydiaCove NF", scale = 1.5 },
-	{ family = "FantasqueSansM Nerd Font", scale = 1.2 },
+	{ family = "CaskaydiaCove Nerd Font", scale = 1.6 },
+	{ family = "FantasqueSansM Nerd Font Mono", scale = 1.8 },
 })
 config.window_background_opacity = 0.95
 config.window_decorations = "RESIZE"
