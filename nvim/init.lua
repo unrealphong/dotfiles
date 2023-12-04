@@ -34,16 +34,24 @@ require("lazy").setup {
   "simrat39/rust-tools.nvim",
   {
     "saecki/crates.nvim",
-    tag = "v0.4.0",
+    event = { "BufRead Cargo.toml" },
     dependencies = { "nvim-lua/plenary.nvim" },
-    {
-      "saecki/crates.nvim",
-      tag = "v0.4.0",
-      dependencies = { "nvim-lua/plenary.nvim" },
-      config = function()
-        require("crates").setup()
-      end,
-    },
+    config = function()
+      require("crates").setup {
+        src = {
+          cmp = {
+            enabled = true,
+          },
+        },
+        null_ls = {
+          enabled = true,
+        },
+        popup = {
+          autofocus = true,
+          hide_on_select = true,
+        },
+      }
+    end,
   },
 
   "rmagatti/alternate-toggler",
@@ -174,6 +182,7 @@ require "neovide"
 
 require "p-mason"
 require "p-lsp"
+-- require "typescript"
 require "p-lspsaga"
 require "p-lualine"
 -- require "p-galaxyline"
@@ -188,3 +197,5 @@ require "p-comment"
 require "p-indent"
 require "p-colorizer"
 require "p-conform"
+require "p-null"
+require "p-crates"
