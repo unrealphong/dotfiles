@@ -64,7 +64,11 @@ require("lazy").setup {
 
   "nvim-telescope/telescope.nvim",
   "nvim-lua/plenary.nvim",
-
+  {
+    "Wansmer/treesj",
+    keys = { "<space>m", "<space>j", "<space>s" },
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+  },
   "hrsh7th/cmp-nvim-lsp",
   "hrsh7th/cmp-buffer",
   "hrsh7th/cmp-path",
@@ -79,12 +83,12 @@ require("lazy").setup {
   },
   { "mfussenegger/nvim-lint", event = { "BufReadPre", "BufNewFile" } },
   "fedepujol/move.nvim",
-  -- {
-  --   "pmizio/typescript-tools.nvim",
-  --   dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-  --   opts = {},
-  -- },
-  "jose-elias-alvarez/typescript.nvim",
+  {
+    "pmizio/typescript-tools.nvim",
+    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+    opts = {},
+  },
+  -- "jose-elias-alvarez/typescript.nvim",
   "jose-elias-alvarez/null-ls.nvim",
 
   "L3MON4D3/LuaSnip",
@@ -173,6 +177,7 @@ require "p-lsp"
 require "p-lspsaga"
 require "p-lualine"
 -- require "p-galaxyline"
+require "p-lint"
 require "p-telescope"
 require "p-lspkind"
 require "p-cmp"

@@ -1,7 +1,7 @@
 require("lualine").setup {
   options = {
     icons_enabled = true,
-    theme = "everforest",
+    theme = "auto",
     component_separators = { left = "", right = "" },
     section_separators = { left = "", right = "" },
     disabled_filetypes = {
@@ -22,7 +22,7 @@ require("lualine").setup {
     lualine_b = { { "filename", path = 3 } },
     lualine_c = { "diagnostics" },
     lualine_x = {},
-    lualine_y = { "" },
+    lualine_y = {},
     lualine_z = { "filetype" },
   },
   inactive_sections = {

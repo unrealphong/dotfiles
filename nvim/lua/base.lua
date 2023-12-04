@@ -1,5 +1,5 @@
 local opt = vim.opt
-
+opt.signcolumn = "yes"
 opt.number = true
 opt.relativenumber = true
 
@@ -9,8 +9,8 @@ opt.sidescrolloff = 5
 opt.hlsearch = true
 opt.incsearch = true
 
-opt.mouse:append('a')
-opt.clipboard:append('unnamedplus')
+opt.mouse:append "a"
+opt.clipboard:append "unnamedplus"
 
 opt.tabstop = 2
 opt.shiftwidth = 2
@@ -24,24 +24,14 @@ opt.swapfile = false
 opt.autoread = true
 vim.bo.autoread = true
 
-opt.signcolumn = 'yes'
-
 opt.cursorline = true
 opt.termguicolors = true
 
-
-opt.foldmethod = "expr"
-opt.foldexpr = "nvim_treesitter#foldexpr()"
-
--- https://stackoverflow.com/questions/8316139/how-to-set-the-default-to-unfolded-when-you-open-a-file
-vim.wo.foldlevel = 99
-
--- highlight on yank
-vim.api.nvim_create_autocmd('TextYankPost', {
+vim.api.nvim_create_autocmd("TextYankPost", {
   callback = function()
-    vim.highlight.on_yank({
-      higroup = 'IncSearch',
+    vim.highlight.on_yank {
+      higroup = "IncSearch",
       timeout = 300,
-    })
+    }
   end,
 })

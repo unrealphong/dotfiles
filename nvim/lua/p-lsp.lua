@@ -1,28 +1,11 @@
-local on_attach = function(client)
-  client.server_capabilities.documentFormattingProvider = false
-  client.server_capabilities.documentRangeFormattingProvider = false
-
-  local Format = vim.api.nvim_create_augroup("Format", { clear = true })
-  vim.api.nvim_create_autocmd("BufWritePre", {
-    group = Format,
-    callback = function()
-      local ts = require("typescript").actions
-      ts.addMissingImports { sync = true }
-      ts.organizeImports { sync = true }
-      vim.lsp.buf.format()
-    end,
-  })
-end
-
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 local lsp_config = {
   capabilities = capabilities,
   group = vim.api.nvim_create_augroup("LspFormatting", { clear = true }),
-  on_attach = function(client)
-    on_attach(client)
-  end,
 }
+
+local api = require "typescript-tools.api"
 
 require("rust-tools").setup {
   server = {
@@ -47,18 +30,15 @@ require("mason-lspconfig").setup_handlers {
     }))
   end,
   tsserver = function()
-    require("typescript").setup {
-      server = vim.tbl_extend("force", lsp_config, {
-        on_attach = function(client)
-          on_attach(client)
-        end,
-        init_options = {
-          preferences = {
-            importModuleSpecifierPreference = "non-relative",
-            jsxAttributeCompletionStyle = "none",
-          },
+    require("typescript-tools").setup {
+      handlers = {
+        ["textDocument/publishDiagnostics"] = api.filter_diagnostics { 6133 },
+      },
+      settings = {
+        tsserver_file_preferences = {
+          importModuleSpecifierEnding = "non-relative",
         },
-      }),
+      },
     }
   end,
   solargraph = function()
