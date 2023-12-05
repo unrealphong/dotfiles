@@ -27,9 +27,35 @@ require("nvim-treesitter.configs").setup {
   },
   autotag = {
     enable = true,
+    enable_rename = true,
+    enable_close = true,
+    enable_close_on_slash = true,
+    filetypes = {
+      "html",
+      "javascript",
+      "typescript",
+      "javascriptreact",
+      "typescriptreact",
+      "svelte",
+      "vue",
+      "tsx",
+      "jsx",
+      markdown = "mdx",
+    },
   },
 }
-
+require("treesitter-context").setup {
+  enable = true,
+  max_lines = 0,
+  min_window_height = 0,
+  line_numbers = true,
+  multiline_threshold = 20,
+  trim_scope = "outer",
+  mode = "cursor",
+  separator = nil,
+  zindex = 20,
+  on_attach = nil,
+}
 require("template-string").setup()
 
 -- fold

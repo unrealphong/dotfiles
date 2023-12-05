@@ -105,12 +105,7 @@ require("lazy").setup {
   "L3MON4D3/LuaSnip",
   "saadparwaiz1/cmp_luasnip",
 
-  {
-    "nvim-treesitter/nvim-treesitter",
-    dependencies = {
-      "JoosepAlviste/nvim-ts-context-commentstring",
-    },
-  },
+  "nvim-treesitter/nvim-treesitter",
 
   "nvim-treesitter/nvim-treesitter-context",
   "windwp/nvim-ts-autotag",
