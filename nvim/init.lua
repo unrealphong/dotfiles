@@ -19,8 +19,11 @@ require("lazy").setup {
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   "EdenEast/nightfox.nvim",
   "sainnhe/gruvbox-material",
+
   "nvim-lualine/lualine.nvim",
+  "rebelot/heirline.nvim",
   "nvimdev/galaxyline.nvim",
+
   { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
   "NvChad/nvim-colorizer.lua",
 
@@ -174,7 +177,6 @@ require("lazy").setup {
 
 require "config.EcoVim"
 require "base"
-require "maps"
 require "color"
 require "text"
 require "other"
@@ -183,6 +185,7 @@ require "neovide"
 require "p-mason"
 require "p-lsp"
 -- require "typescript"
+require "maps"
 require "p-lspsaga"
 require "p-lualine"
 -- require "p-galaxyline"

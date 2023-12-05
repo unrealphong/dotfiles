@@ -1,7 +1,8 @@
 vim.g.mapleader = " "
 local keymap = vim.keymap
-vim.keymap.set("n", "<leader>m", "<cmd>TSToolsOrganizeImports<cr>")
-vim.keymap.set("n", "<leader>a", "<cmd>TSToolsAddMissingImports<cr>")
+
+keymap.set("n", "<leader>m", "<cmd>TSToolsOrganizeImports<cr>")
+keymap.set("n", "<leader>a", "<cmd>TSToolsAddMissingImports<cr>")
 
 keymap.set("n", "<leader>q", "<cmd>q<cr>")
 keymap.set("n", "<leader>w", "<cmd>w<cr>")
