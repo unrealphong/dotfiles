@@ -53,8 +53,12 @@ yabai -m rule --add app="^Firefox$" manage=off
 yabai -m rule --add app="^Safari$" manage=off
 yabai -m rule --add app="^Google Chrome$" layer=normal manage=off
 
+yabai -m rule --add app="^Microsoft Word$" layer=normal manage=off
+yabai -m rule --add app="^Microsoft Excel$" layer=normal manage=off
+yabai -m rule --add app="^Microsoft PowerPoint$" layer=normal manage=off
 
 yabai -m rule --add app="^Docker Desktop$" layer=normal manage=off
+yabai -m rule --add app="^DBeaver$" layer=normal manage=off
 yabai -m rule --add app="^MongoDB Compass$" layer=above manage=off
 yabai -m rule --add app="^Notion$" layer=above manage=off
 yabai -m rule --add app="^IntelliJ IDEA$" manage=off
