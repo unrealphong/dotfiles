@@ -9,7 +9,7 @@ require("typescript-tools").setup {
   },
   settings = {
     tsserver_file_preferences = {
-      importModuleSpecifierPreferce = "non-relative",
+      importModuleSpecifierPreference = "non-relative",
       importModuleSpecifierEnding = "auto",
     },
   },

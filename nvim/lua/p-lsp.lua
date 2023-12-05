@@ -36,6 +36,7 @@ require("mason-lspconfig").setup_handlers {
       },
       settings = {
         tsserver_file_preferences = {
+          importModuleSpecifierPreference = "non-relative",
           importModuleSpecifierEnding = "auto",
         },
       },
