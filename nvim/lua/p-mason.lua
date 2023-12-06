@@ -23,7 +23,7 @@ require("mason-tool-installer").setup {
     "solargraph",
     "stylua",
     "eslint_d",
-    -- "typescript-language-server",
+    "typescript-language-server",
     "ember-language-server",
     "vue-language-server",
     "astro-language-server",
