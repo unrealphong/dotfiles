@@ -15,14 +15,8 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup {
   "sainnhe/everforest",
-  "folke/tokyonight.nvim",
-  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-  "EdenEast/nightfox.nvim",
-  "sainnhe/gruvbox-material",
 
   "nvim-lualine/lualine.nvim",
-  "rebelot/heirline.nvim",
-  "nvimdev/galaxyline.nvim",
 
   { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
   "NvChad/nvim-colorizer.lua",
@@ -58,7 +52,11 @@ require("lazy").setup {
   },
 
   "rmagatti/alternate-toggler",
-  "windwp/nvim-autopairs",
+  {
+    "windwp/nvim-autopairs",
+    event = "InsertEnter",
+    opts = {}, -- this is equalent to setup({}) function
+  },
   "mg979/vim-visual-multi",
   "gcmt/wildfire.vim",
 
@@ -74,6 +72,7 @@ require("lazy").setup {
   },
 
   "nvim-telescope/telescope.nvim",
+  "axelvc/template-string.nvim",
   "nvim-lua/plenary.nvim",
   {
     "Wansmer/treesj",
@@ -109,8 +108,6 @@ require("lazy").setup {
 
   "nvim-treesitter/nvim-treesitter-context",
   "windwp/nvim-ts-autotag",
-  "p00f/nvim-ts-rainbow",
-  "axelvc/template-string.nvim",
 
   "folke/todo-comments.nvim",
   "numToStr/Comment.nvim",
@@ -132,7 +129,6 @@ require("lazy").setup {
     -- dependencies = { 'kkharji/sqlite.lua' }
   },
 
-  "gbprod/yanky.nvim",
   "hinell/duplicate.nvim",
 
   {
@@ -150,27 +146,40 @@ require("lazy").setup {
       },
       {
         "S",
-        mode = { "n", "o", "x" },
+        mode = { "n", "x", "o" },
         function()
           require("flash").treesitter()
         end,
         desc = "Flash Treesitter",
       },
+      {
+        "r",
+        mode = "o",
+        function()
+          require("flash").remote()
+        end,
+        desc = "Remote Flash",
+      },
+      {
+        "R",
+        mode = { "o", "x" },
+        function()
+          require("flash").treesitter_search()
+        end,
+        desc = "Treesitter Search",
+      },
+      {
+        "<c-s>",
+        mode = { "c" },
+        function()
+          require("flash").toggle()
+        end,
+        desc = "Toggle Flash Search",
+      },
     },
   },
-  {
-    "nvim-orgmode/orgmode",
-    dependencies = {
-      { "nvim-treesitter/nvim-treesitter", lazy = true },
-    },
-    event = "VeryLazy",
-  },
-  -- {
-  --   "huggingface/llm.nvim",
-  -- },
 }
 
-require "config.EcoVim"
 require "base"
 require "color"
 require "text"

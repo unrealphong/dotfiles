@@ -2,7 +2,6 @@ local cmp = require "cmp"
 local luasnip = require "luasnip"
 local lspkind = require "lspkind"
 -- local llm = require "llm"
-
 -- llm.setup {
 --   -- api_token = nil, -- cf Install paragraph
 --   api_token = "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",
