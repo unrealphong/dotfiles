@@ -10,7 +10,7 @@
 local wezterm = require("wezterm")
 local act = wezterm.action
 
-local zsh_path = "/bin/zsh"
+local zsh_path = "/opt/homebrew/bin/fish"
 
 local config = {}
 -- Use config builder object if possible

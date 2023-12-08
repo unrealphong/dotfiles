@@ -26,7 +26,8 @@ env:
 scrolling:
   history: 2000
   auto_scroll: true
-
+key_bindings:
+  - { key: F12, action: ToggleFullscreen }
 #######################################
 ##      START OF COLOR SCHEMES       ##
 #######################################
