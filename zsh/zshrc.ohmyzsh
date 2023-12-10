@@ -31,6 +31,7 @@ ZSH_THEME="robbyrussell"
 
 plugins=(
   git
+  nvm
   zsh-autosuggestions
   zsh-syntax-highlighting
 )

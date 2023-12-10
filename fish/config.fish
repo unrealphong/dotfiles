@@ -52,3 +52,5 @@ set -gx PATH $PATH $HOME/.composer/vendor/bin
 set -x PATH $PATH /opt/homebrew/opt/postgresql@16/bin
 #rvm
 rvm default
+
+atuin init fish | source

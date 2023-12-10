@@ -1,6 +1,13 @@
 vim.g.mapleader = ' '
 local keymap = vim.keymap
 
+keymap.set('n', '<leader>i', '<cmd>ToggleAlternate<cr>')
+
+keymap.set('n', '<leader>j', require('treesj').toggle)
+keymap.set('n', '<leader>J', function()
+  require('treesj').toggle { split = { recursive = true } }
+end)
+
 keymap.set('n', '<leader>m', '<cmd>TSToolsOrganizeImports<cr>')
 keymap.set('n', '<leader>a', '<cmd>TSToolsAddMissingImports<cr>')
 

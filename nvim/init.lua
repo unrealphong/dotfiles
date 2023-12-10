@@ -18,7 +18,7 @@ require('lazy').setup {
 
   'nvim-lualine/lualine.nvim',
 
-  { 'lukas-reineke/indent-blankline.nvim', main = 'ibl', opts = {} },
+  { 'echasnovski/mini.nvim', version = '*' },
   'NvChad/nvim-colorizer.lua',
 
   'MattesGroeger/vim-bookmarks',
@@ -83,7 +83,7 @@ require('lazy').setup {
   'hrsh7th/cmp-path',
   'hrsh7th/cmp-cmdline',
   'hrsh7th/nvim-cmp',
-  'onsails/lspkind-nvim',
+  'onsails/lspkind.nvim',
   'glepnir/lspsaga.nvim',
 
   {
@@ -101,6 +101,9 @@ require('lazy').setup {
 
   'L3MON4D3/LuaSnip',
   'saadparwaiz1/cmp_luasnip',
+
+  'hrsh7th/cmp-vsnip',
+  'hrsh7th/vim-vsnip',
   {
     'nvim-treesitter/nvim-treesitter',
     event = { 'BufReadPre', 'BufNewFile' },
@@ -190,17 +193,15 @@ require('lazy').setup {
 
 require 'base'
 require 'color'
-require 'text'
 require 'other'
 require 'neovide'
+require 'text'
 
 require 'p-mason'
 require 'p-lsp'
--- require "typescript"
 require 'maps'
 require 'p-lspsaga'
 require 'p-lualine'
--- require "p-galaxyline"
 require 'p-lint'
 require 'p-telescope'
 require 'p-lspkind'

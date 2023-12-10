@@ -65,15 +65,15 @@ export WORKSPACE="$HOME/workspace"
 # development
 export DEVELOPMENT="$HOME/development"
 # dotfiles
-export DOTFILES="$HOME/dotfiles"
+export DOTFILES="$WORKSPACE/dotfiles"
 
 # go path
 export GOPATH="$DEVELOPMENT/go"
 export PATH="$PATH:$DEVELOPMENT/go/bin"
 
 # java
-# export JAVA_HOME="/opt/homebrew/opt/openjdk"
-# export PATH="$PATH:$JAVA_HOME/bin"
+export JAVA_HOME="/opt/homebrew/opt/openjdk"
+export PATH="$PATH:$JAVA_HOME/bin"
 
 # composer
 # export PATH="$PATH:$HOME/.composer/vendor/bin"
@@ -98,5 +98,4 @@ export FZF_DEFAULT_OPTS='--color=fg:#f8f8f2,bg:#282a36,hl:#bd93f9 --color=fg+:#f
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
 
-# starship
-# eval "$(starship init zsh)"
+[ -f ~/.shell_eval ] && source ~/.shell_eval
