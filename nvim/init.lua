@@ -13,12 +13,9 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 require 'base'
--- require 'other'
 require 'neovide'
--- require 'text'
 require 'maps'
 require('lazy').setup 'plugins'
-
 -- require 'p-lspsaga'
 -- require 'p-lint'
 -- require 'p-telescope'

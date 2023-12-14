@@ -17,6 +17,6 @@ return {
       { desc = 'Previous todo comment' }
     )
 
-    require('todo-comments').setup()
+    require('todo-comments').setup {}
   end,
 }
