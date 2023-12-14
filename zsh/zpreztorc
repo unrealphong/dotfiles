@@ -41,6 +41,7 @@ zstyle ':prezto:load' pmodule \
   'history-substring-search' \
   'syntax-highlighting' \
   'git' \
+  'contrib-prompt' \
   'prompt'
 
 #
@@ -145,9 +146,10 @@ zstyle ':prezto:module:history-substring-search' prefixed 'yes'
 #
 
 # Set the prompt theme to load.
+zstyle ':prezto:load' pmodule-dirs "${ZPREZTODIR/contrib}"
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
-zstyle ':prezto:module:prompt' theme 'sorin'
+zstyle ':prezto:module:prompt' theme 'spaceship'
 
 # Set the working directory prompt display length.
 # By default, it is set to 'short'. Set it to 'long' (without '~' expansion)
