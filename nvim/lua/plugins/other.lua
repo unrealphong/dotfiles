@@ -17,6 +17,7 @@ return {
     priority = 1000,
     config = function()
       vim.g.everforest_diagnostic_line_highlight = 1
+      vim.g.everforest_transparent_background = 1
       vim.cmd [[colorscheme everforest]]
     end,
   },
