@@ -75,7 +75,12 @@ return {
 
     -- snippets
     require('luasnip.loaders.from_vscode').load {
+      include = { 'typescriptreact' },
+    }
+
+    require('luasnip.loaders.from_vscode').load {
       paths = { '~/.config/nvim/snippets' },
     }
+    require('luasnip.loaders.from_snipmate').lazy_load() -- Lazy loading
   end,
 }
