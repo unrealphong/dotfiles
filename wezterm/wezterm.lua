@@ -1,7 +1,7 @@
 local wezterm = require("wezterm")
 local act = wezterm.action
 
-local fish_path = "/opt/homebrew/bin/fish"
+-- local fish_path = "/opt/homebrew/bin/fish"
 
 local config = {}
 -- Use config builder object if possible
@@ -10,7 +10,7 @@ if wezterm.config_builder then
 end
 
 -- Settings
-config.default_prog = { fish_path, "-l" }
+-- config.default_prog = { fish_path, "-l" }
 
 config.color_scheme = "Tokyo Night"
 
