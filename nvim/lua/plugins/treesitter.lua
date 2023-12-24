@@ -6,6 +6,7 @@ return {
     dependencies = {
       'windwp/nvim-ts-autotag',
       'axelvc/template-string.nvim',
+      'nvim-treesitter/nvim-treesitter-textobjects',
     },
     config = function()
       require('nvim-treesitter.configs').setup {
@@ -14,6 +15,8 @@ return {
           'javascript',
           'html',
           'css',
+          'scss',
+          'dockerfile',
           'tsx',
           'lua',
           'rust',
@@ -24,6 +27,7 @@ return {
           'markdown',
           'markdown_inline',
           'go',
+          'yaml',
         },
 
         sync_install = false,
@@ -32,11 +36,21 @@ return {
 
         highlight = {
           enable = true,
-
-          additional_vim_regex_highlighting = false,
+          use_languagetree = true,
+        },
+        indent = {
+          enable = true,
         },
         autotag = {
           enable = true,
+        },
+        refactor = {
+          highlight_definitions = {
+            enable = true,
+          },
+          highlight_current_scope = {
+            enable = false,
+          },
         },
         incremental_selection = {
           enable = true,
