@@ -21,6 +21,7 @@ return {
         astro = { 'prettierd' },
       },
       format_on_save = {
+        pattern = '.lua,*.graphql,*.css,*.html,*.json,*.yaml,*.md,*.gql,*.rs',
         timeout_ms = 500,
         async = false,
         lsp_fallback = true,

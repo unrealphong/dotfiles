@@ -1,22 +1,25 @@
 return {
-  'folke/todo-comments.nvim',
-  dependencies = { 'nvim-lua/plenary.nvim' },
+  'MattesGroeger/vim-bookmarks',
+  dependencies = {
+    'tom-anders/telescope-vim-bookmarks.nvim',
+  },
   config = function()
-    vim.keymap.set('n', ']t', function()
-      require('todo-comments').jump_next()
-    end, { desc = 'Next todo comment' })
+    vim.g.bookmark_sign = '♥'
+    vim.g.bookmark_highlight_lines = 1
 
-    vim.keymap.set('n', '[t', function()
-      require('todo-comments').jump_prev()
-    end, { desc = 'Previous todo comment' })
+    require('telescope').load_extension 'vim_bookmarks'
 
-    vim.keymap.set(
+    local keymap = vim.keymap
+
+    keymap.set(
       'n',
-      '<leader>t',
-      '<cmd>TodoTelescope<cr>',
-      { desc = 'Previous todo comment' }
+      'ma',
+      '<cmd>lua require("telescope").extensions.vim_bookmarks.all()<cr>'
     )
-
-    require('todo-comments').setup {}
+    keymap.set(
+      'n',
+      'mc',
+      '<cmd>lua require("telescope").extensions.vim_bookmarks.current_file()<cr>'
+    )
   end,
 }

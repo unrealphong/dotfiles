@@ -20,13 +20,6 @@ return {
     keymap.set('n', '<leader>a', '<cmd>TSToolsAddMissingImports<cr>')
     local api = require 'typescript-tools.api'
 
-    require('rust-tools').setup {
-      server = {
-        standalone = true,
-        capabilities = capabilities,
-      },
-    }
-
     require('mason-lspconfig').setup_handlers {
       function(server_name)
         require('lspconfig')[server_name].setup(lsp_config)
@@ -78,20 +71,12 @@ return {
         )
       end,
       rust_analyzer = function()
-        require('lspconfig').rust_analyzer.setup(
-          vim.tbl_extend('force', lsp_config, {
-            settings = {
-              ['rust-analyzer'] = {
-                cargo = {
-                  loadOutDirsFromCheck = true,
-                },
-                procMacro = {
-                  enable = true,
-                },
-              },
-            },
-          })
-        )
+        require('rust-tools').setup {
+          server = {
+            standalone = true,
+            capabilities = capabilities,
+          },
+        }
       end,
       clangd = function()
         require('lspconfig').clangd.setup(vim.tbl_extend('force', lsp_config, {

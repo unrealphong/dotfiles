@@ -30,7 +30,6 @@ return {
         'rust-analyzer',
         'solargraph',
         'stylua',
-        'eslint_d',
         'typescript-language-server',
         'ember-language-server',
         'vue-language-server',

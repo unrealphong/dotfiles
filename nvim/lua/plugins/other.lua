@@ -1,8 +1,4 @@
 return {
-  {
-    'echasnovski/mini.indentscope',
-    opts = {},
-  },
   'mg979/vim-visual-multi',
   'f-person/git-blame.nvim',
   'github/copilot.vim',
@@ -10,15 +6,5 @@ return {
     'windwp/nvim-autopairs',
     event = 'InsertEnter',
     opts = {},
-  },
-  {
-    'sainnhe/everforest',
-    lazy = false,
-    priority = 1000,
-    config = function()
-      vim.g.everforest_diagnostic_line_highlight = 1
-      vim.g.everforest_transparent_background = 1
-      vim.cmd [[colorscheme everforest]]
-    end,
   },
 }
