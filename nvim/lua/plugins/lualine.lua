@@ -3,7 +3,7 @@ return {
   config = function()
     require('lualine').setup {
       options = {
-        theme = 'auto',
+        theme = 'rose-pine-alt',
       },
       sections = {
         lualine_a = { 'mode' },

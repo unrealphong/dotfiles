@@ -4,9 +4,9 @@ return {
   config = function()
     require('rose-pine').setup {
       --- @usage 'auto'|'main'|'moon'|'dawn'
-      variant = 'auto',
+      variant = 'moon',
       --- @usage 'main'|'moon'|'dawn'
-      dark_variant = 'main',
+      dark_variant = 'moon',
       bold_vert_split = false,
       dim_nc_background = false,
       disable_background = false,
@@ -15,7 +15,8 @@ return {
 
       --- @usage string hex value or named color from rosepinetheme.com/palette
       groups = {
-        background = 'base',
+        --- @usage 'none' | 'base'
+        background = 'none',
         background_nc = '_experimental_nc',
         panel = 'surface',
         panel_nc = 'base',
@@ -54,6 +55,12 @@ return {
         -- If you only want to set what is written in this config exactly,
         -- you can set the inherit option:
         Search = { bg = 'gold', inherit = false },
+        TelescopeBorder = { fg = 'highlight_high', bg = 'none' },
+        TelescopeNormal = { bg = 'none' },
+        TelescopePromptNormal = { bg = 'base' },
+        TelescopeResultsNormal = { fg = 'subtle', bg = 'none' },
+        TelescopeSelection = { fg = 'text', bg = 'base' },
+        TelescopeSelectionCaret = { fg = 'rose', bg = 'rose' },
       },
     }
 

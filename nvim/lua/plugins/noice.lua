@@ -8,6 +8,7 @@ return {
   config = function()
     require('noice').setup {
       cmdline = {
+        background_colour = '#282A36',
         enabled = false, -- enables the Noice cmdline UI
         view = 'cmdline_popup', -- view for rendering the cmdline. Change to `cmdline` to get a classic cmdline at the bottom
         opts = {}, -- global options for the cmdline. See section on views
