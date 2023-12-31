@@ -117,6 +117,10 @@ export DEVELOPMENT="$HOME/development"
 # dotfiles
 export DOTFILES="$WORKSPACE/dotfiles"
 
+
+# Added by serverless binary installer
+export PATH="$HOME/.serverless/bin:$PATH"
+
 # go path
 export GOPATH="$DEVELOPMENT/go"
 export PATH="$PATH:$DEVELOPMENT/go/bin"
@@ -149,3 +153,4 @@ export FZF_DEFAULT_OPTS='--color=fg:#f8f8f2,bg:#282a36,hl:#bd93f9 --color=fg+:#f
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
 
 [ -f ~/.shell_eval ] && source ~/.shell_eval
+
