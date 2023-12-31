@@ -75,7 +75,7 @@ return {
 
     -- snippets
     require('luasnip.loaders.from_vscode').load {
-      include = { 'typescriptreact' },
+      -- include = { 'typescriptreact' },
     }
 
     require('luasnip.loaders.from_vscode').load {
