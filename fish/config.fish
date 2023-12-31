@@ -53,4 +53,7 @@ set -x PATH $PATH /opt/homebrew/opt/postgresql@16/bin
 #rvm
 rvm default
 
+fish_config theme choose "Rosé Pine Dawn"
+
 atuin init fish | source
+zoxide init fish | source

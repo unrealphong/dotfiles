@@ -9,6 +9,7 @@ return {
     'onsails/lspkind.nvim', -- vs-code like pictograms
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-cmdline',
+    'rafamadriz/friendly-snippets',
   },
   config = function()
     local cmp = require 'cmp'
@@ -73,14 +74,12 @@ return {
       }),
     })
 
-    -- snippets
-    require('luasnip.loaders.from_vscode').load {
-      -- include = { 'typescriptreact' },
-    }
+    require('luasnip.loaders.from_vscode').lazy_load()
 
     require('luasnip.loaders.from_vscode').load {
       paths = { '~/.config/nvim/snippets' },
     }
+
     require('luasnip.loaders.from_snipmate').lazy_load() -- Lazy loading
   end,
 }
