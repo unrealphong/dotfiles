@@ -82,8 +82,6 @@ function set_work_git_config() {
 
 alias gitconfig="set_work_git_config"
 
-. /opt/homebrew/etc/profile.d/z.sh
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=247"
