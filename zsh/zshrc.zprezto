@@ -70,7 +70,7 @@ function set_work_git_config() {
 
     if [ -n "$repo_path" ]; then
         cd "$repo_path"
-        git config user.name "phonglenus"
+        git config user.name "unrealphong"
         git config user.email "hongphongle115@gmail.com"
         
         echo "Git user configured for the project."
