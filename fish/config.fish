@@ -42,6 +42,8 @@ else
 end
 # <<< conda initialize <<<
 
+# doom cli
+set -gx PATH $HOME/.emacs.d/bin $PATH
 
 # go environment
 set -x GOPATH ~/development/go
@@ -57,3 +59,7 @@ fish_config theme choose "Rosé Pine Dawn"
 
 atuin init fish | source
 zoxide init fish | source
+
+# tabtab source for packages
+# uninstall by removing these lines
+[ -f ~/.config/tabtab/fish/__tabtab.fish ]; and . ~/.config/tabtab/fish/__tabtab.fish; or true
