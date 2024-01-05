@@ -17,7 +17,7 @@ return {
     -- require('mason-lspconfig').setup {}
     require('mason-tool-installer').setup {
       ensure_installed = {
-        'prettierd',
+        'prettier',
         'tailwindcss-language-server',
         'gopls',
         'mdx-analyzer',
