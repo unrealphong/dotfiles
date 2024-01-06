@@ -1,11 +1,11 @@
 import = ["./themes/rose-pine-dawn.toml"]
 [font]
-  size = 18
+  size = 17 
   [font.normal]
-    family = "FantasqueSansM Nerd Font Mono"
-    # family = "JetBrainsMono NF"
+    # family = "FantasqueSansM Nerd Font Mono"
+    family = "JetBrainsMono NF"
 [window]
-  padding = { x = 5, y = 5 }
+  padding = { x = 10, y = 10 }
   dimensions = { columns = 120, lines = 40  }
   opacity= 0.95
   decorations = "Buttonless"
