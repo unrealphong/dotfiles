@@ -77,6 +77,12 @@ return {
       rust_analyzer = function()
         require('rust-tools').setup {
           server = {
+            cmd = {
+              'rustup',
+              'run',
+              'stable',
+              'rust_analyzer',
+            },
             standalone = true,
             capabilities = capabilities,
           },
