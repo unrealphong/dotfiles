@@ -49,6 +49,10 @@ return {
               importModuleSpecifierPreference = 'non-relative',
               importModuleSpecifierEnding = 'auto',
             },
+            tsserver_format_options = {
+              allowIncompleteCompletions = true,
+              allowRenameOfImportPath = true,
+            },
           },
         }
       end,
