@@ -6,6 +6,7 @@ return {
       typescript = { 'eslint' },
       javascriptreact = { 'eslint' },
       typescriptreact = { 'eslint' },
+      php = { 'psalm' },
     }
     vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWritePost', 'InsertLeave' }, {
       callback = function()

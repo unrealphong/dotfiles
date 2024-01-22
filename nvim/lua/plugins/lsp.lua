@@ -151,6 +151,17 @@ return {
           },
         }))
       end,
+      phpactor = function()
+        require('lspconfig').phpactor.setup(
+          vim.tbl_extend('force', lsp_config, {
+            cmd = { 'phpactor', 'language-server' },
+            init_options = {
+              ['language_server_phpstan.enabled'] = false,
+              ['language_server_psalm.enabled'] = false,
+            },
+          })
+        )
+      end,
     }
   end,
 }

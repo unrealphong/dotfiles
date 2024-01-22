@@ -19,6 +19,7 @@ return {
         svelte = { { 'prettier' } },
         vue = { 'prettier' },
         astro = { 'prettier' },
+        php = { 'php_cs_fixer' },
       },
       format_on_save = {
         pattern = '.lua,*.graphql,*.css,*.html,*.json,*.yaml,*.md,*.gql,*.rs',
