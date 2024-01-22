@@ -99,7 +99,7 @@ format = '[ $symbol ($version) ]($style)'
 disabled = false
 
 [package]
-symbol = ""
+symbol = "󰏗"
 style = "fg:#ffffff bg:#cb3837"
 format = '[ $symbol ($version) ]($style)'
 disabled = false
