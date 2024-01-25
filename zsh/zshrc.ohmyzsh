@@ -22,20 +22,20 @@ function set_work_git_config() {
 
 alias gitconfig="set_work_git_config"
 
-. /opt/homebrew/etc/profile.d/z.sh
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# ZSH_THEME="robbyrussell"
 
-ZSH_THEME="robbyrussell"
-
+# Enable prompt themes
+[ -f ~/.zshrc.theme ] && source ~/.zshrc.theme
+# Fix ls colors
+#
 plugins=(
   git
-  nvm
-  zsh-autosuggestions
-  zsh-syntax-highlighting
 )
 
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH/oh-my-zsh.sh
 
 export LANG=en_US.UTF-8

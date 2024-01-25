@@ -13,6 +13,7 @@ return {
         ensure_installed = {
           'typescript',
           'javascript',
+          'vim',
           'html',
           'css',
           'scss',
