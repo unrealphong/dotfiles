@@ -1,0 +1,51 @@
+autoload -U promptinit
+promptinit
+# user, host, full path, and time/date
+# on two lines for easier vgrepping
+# entry in a nice long thread on the Arch Linux forums: http://bbs.archlinux.org/viewtopic.php?pid=521888#p521888
+yui_git_branch() {
+  local branch
+  if branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null); then
+    if [[ "$branch" == "HEAD" ]]; then
+      branch='detached*'
+    fi
+    echo " $(yui_sep) \u2387 $branch"
+  fi
+}
+
+yui_user_at_host() {
+  print -P "%F{65}%n[at]%m%f"
+}
+
+yui_sep() {
+  echo "%F{178}\u267A%f"
+}
+
+yui_arrow() {
+  echo "\u276F"
+}
+
+yui_current_dir() {
+  print -P "%~"
+}
+
+yui_count_job() {
+  print -P "%!"
+}
+
+yui_k8s_current_context() {
+    if [ -x "$(command -v kubectl)" ]; then
+        print -P "$(kubectl config current-context)"
+    fi
+}
+
+function precmd() {
+    print -P "$(yui_sep) $(yui_user_at_host) $(yui_sep) $(yui_current_dir) $(yui_sep) $(yui_git_branch) $(yui_sep) $(yui_k8s_current_context) $(yui_arrow)"
+}
+
+yui_prompt() {
+  echo "%F{196}$(yui_arrow)%F{220}$(yui_arrow)%F{10}$(yui_arrow) %f"
+}
+
+PROMPT=$(yui_prompt)
+RPROMPT=[%*]
