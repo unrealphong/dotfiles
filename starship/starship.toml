@@ -62,10 +62,10 @@ style = "fg:#ffffff bg:#840a2c"
 format = '[ $symbol ($version) ]($style)'
 disabled = false
 
-[kubernetes]
-style = "fg:#ffffff bg:#326ce5"
-format = '[ on ﴱ ($user on )($cluster in )$context \($namespace\) ]($style)'
-disabled = false
+# [kubernetes]
+# style = "fg:#ffffff bg:#326ce5"
+# format = '[ on ﴱ ($user on )($cluster in )$context \($namespace\) ]($style)'
+# disabled = false
 
 [gcloud]
 symbol = " "
@@ -89,6 +89,12 @@ disabled = false
 [lua]
 symbol = ""
 style = "fg:#ffffff bg:#000080"
+format = '[ $symbol ($version) ]($style)'
+disabled = false
+
+[ruby]
+symbol = "󰴭"
+style = "fg:#ffffff bg:#cc342d"
 format = '[ $symbol ($version) ]($style)'
 disabled = false
 

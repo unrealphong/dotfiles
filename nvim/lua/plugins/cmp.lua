@@ -9,10 +9,18 @@ return {
     'onsails/lspkind.nvim', -- vs-code like pictograms
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-cmdline',
+    {
+      'Saecki/crates.nvim',
+      event = { 'BufRead Cargo.toml' },
+      opts = {
+        src = {
+          cmp = { enabled = true },
+        },
+      },
+    },
   },
   config = function()
     local cmp = require 'cmp'
-
     local luasnip = require 'luasnip'
 
     local lspkind = require 'lspkind'

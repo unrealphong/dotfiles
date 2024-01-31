@@ -13,7 +13,6 @@ return {
         ensure_installed = {
           'typescript',
           'javascript',
-          'vim',
           'html',
           'css',
           'scss',
@@ -22,9 +21,6 @@ return {
           'lua',
           'rust',
           'json',
-          'graphql',
-          'regex',
-          'prisma',
           'markdown',
           'markdown_inline',
           'go',
