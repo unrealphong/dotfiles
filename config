@@ -2,16 +2,17 @@ Host github-personal.com
     HostName github.com
     User git
     IdentityFile ~/.ssh/id_rsa_personal
-Host github-work.com    
-    HostName github.com
-    User git
-    IdentityFile ~/.ssh/id_rsa_work  
 Host gitlab-personal.com
     HostName gitlab.com
     User git
     IdentityFile ~/.ssh/id_rsa_personal
-Host gitlab-work.com    
+
+Host github-primary.com    
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_rsa_primary
+Host gitlab-primary.com    
     HostName gitlab.com
     User git
-    IdentityFile ~/.ssh/id_rsa_work 
+    IdentityFile ~/.ssh/id_rsa_primary 
 
