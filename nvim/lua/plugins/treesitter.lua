@@ -6,25 +6,22 @@ return {
     dependencies = {
       'windwp/nvim-ts-autotag',
       'axelvc/template-string.nvim',
-      'nvim-treesitter/nvim-treesitter-textobjects',
     },
     config = function()
       require('nvim-treesitter.configs').setup {
         ensure_installed = {
+          'tsx',
+          'lua',
+          'vim',
           'typescript',
           'javascript',
           'html',
           'css',
-          'scss',
-          'dockerfile',
-          'tsx',
-          'lua',
-          'rust',
           'json',
+          'regex',
+          'rust',
           'markdown',
           'markdown_inline',
-          'go',
-          'yaml',
         },
 
         sync_install = false,
@@ -33,21 +30,11 @@ return {
 
         highlight = {
           enable = true,
-          use_languagetree = true,
-        },
-        indent = {
-          enable = true,
+
+          additional_vim_regex_highlighting = false,
         },
         autotag = {
           enable = true,
-        },
-        refactor = {
-          highlight_definitions = {
-            enable = true,
-          },
-          highlight_current_scope = {
-            enable = false,
-          },
         },
         incremental_selection = {
           enable = true,
@@ -61,12 +48,6 @@ return {
       }
 
       require('template-string').setup {}
-
-      -- fold
-      local opt = vim.opt
-      opt.foldmethod = 'expr'
-      opt.foldexpr = 'nvim_treesitter#foldexpr()'
-      opt.foldenable = false
     end,
   },
 }

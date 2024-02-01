@@ -6,7 +6,7 @@ return {
       --- @usage 'auto'|'main'|'moon'|'dawn'
       variant = 'moon',
       --- @usage 'main'|'moon'|'dawn'
-      dark_variant = 'moon',
+      dark_variant = 'dawn',
       bold_vert_split = false,
       dim_nc_background = false,
       disable_background = false,
@@ -16,7 +16,7 @@ return {
       --- @usage string hex value or named color from rosepinetheme.com/palette
       groups = {
         --- @usage 'none' | 'base'
-        background = 'base',
+        background = 'none',
         background_nc = '_experimental_nc',
         panel = 'surface',
         panel_nc = 'base',
