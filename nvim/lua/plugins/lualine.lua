@@ -3,12 +3,12 @@ return {
   config = function()
     require('lualine').setup {
       options = {
-        theme = 'rose-pine-alt',
+        theme = 'auto',
       },
       sections = {
         lualine_a = { 'mode' },
         lualine_b = { { 'filename', path = 4 } },
-        lualine_c = { 'diagnostics' },
+        lualine_c = { 'branch', 'diagnostics' },
         lualine_x = {},
         lualine_y = {},
         lualine_z = { 'filetype' },

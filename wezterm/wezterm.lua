@@ -1,9 +1,10 @@
 local wezterm = require("wezterm")
-local colors = require("themes/rose-pine").colors()
+-- local colors = require("themes/rose-pine").colors()
 
 return {
 
-	font = wezterm.font("JetBrainsMono NF", { weight = "Medium", stretch = "Normal", style = "Normal" }),
+	color_scheme = "Everforest Dark (Gogh)",
+	font = wezterm.font("GeistMono Nerd Font", { weight = "Medium", stretch = "Normal", style = "Normal" }),
 
 	font_rules = {
 		{
@@ -30,7 +31,7 @@ return {
 		left = 15,
 		right = 15,
 		top = 10,
-		bottom = 0,
+		bottom = 10,
 	},
 
 	window_background_opacity = 0.92,

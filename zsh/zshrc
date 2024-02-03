@@ -1,27 +1,5 @@
 export ZSH="$HOME/.oh-my-zsh"
 
-# alias
-alias reload='source ~/.zshrc'
-
-alias gsync="git checkout master && git fetch upstream && git rebase upstream/master && git push"
-
-function set_work_git_config() {
-    local repo_path="$(git rev-parse --show-toplevel 2>/dev/null)"
-
-    if [ -n "$repo_path" ]; then
-        cd "$repo_path"
-        git config user.name "henryy-el"
-        git config user.email "phonghngle@gmail.com"
-        
-        echo "Git user configured for the project."
-
-    else
-        echo "Could not find Git workspace or directory repo."
-    fi
-}
-
-alias gitconfig="set_work_git_config"
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # ZSH_THEME="spaceship"
@@ -39,6 +17,7 @@ plugins=(
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 source $ZSH/oh-my-zsh.sh
 
 export LANG=en_US.UTF-8
@@ -82,8 +61,11 @@ export PATH="$PATH:$HOME/.composer/vendor/bin"
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
-# Load Angular CLI autocompletion.
-source <(ng completion script)
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# Added by serverless binary installer
+export PATH="$HOME/.serverless/bin:$PATH"
 
 if [[ -t 0 ]]; then
   source $DOTFILES/zsh/greeting.zsh
@@ -101,9 +83,8 @@ export FZF_DEFAULT_OPTS='--color=fg:#f8f8f2,bg:#282a36,hl:#bd93f9 --color=fg+:#f
 
 [ -f ~/.shell_eval ] && source ~/.shell_eval
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+[ -f ~/.aliases_zsh ] && source $HOME/.aliases_zsh
 
+# Load Angular CLI autocompletion.
+source <(ng completion script)
 
-# Added by serverless binary installer
-export PATH="$HOME/.serverless/bin:$PATH"

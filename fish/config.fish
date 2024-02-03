@@ -9,8 +9,8 @@ alias prv="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {
 alias gitconfig set_work_git_config
 
 function set_work_git_config
-    git config user.name "unrealphong" 
-    git config user.email "hongphongle115@gmail.com"
+    git config user.name "henryy-el" 
+    git config user.email "phonghngle@gmail.com" 
 
     echo "Git user configured for the project"
 
@@ -58,11 +58,11 @@ fish_config theme choose "Rosé Pine Dawn"
 
 atuin init fish | source
 zoxide init fish | source
+# starship init fish | source
 
 # tabtab source for packages
 # uninstall by removing these lines
 [ -f ~/.config/tabtab/fish/__tabtab.fish ]; and . ~/.config/tabtab/fish/__tabtab.fish; or true
 
-zoxide init fish | source
-# starship init fish | source
+
 
