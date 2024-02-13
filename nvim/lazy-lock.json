@@ -1,0 +1,6 @@
+{
+  "everforest": { "branch": "master", "commit": "4ce8ea3588265dd7d82113d3a937f53c59685164" },
+  "lazy.nvim": { "branch": "main", "commit": "28126922c9b54e35a192ac415788f202c3944c9f" },
+  "nvim-tree.lua": { "branch": "master", "commit": "863cf832ceb0b2377c913b7696dd7d64f4978941" },
+  "nvim-web-devicons": { "branch": "master", "commit": "7f30f2da3c3641841ceb0e2c150281f624445e8f" }
+}
