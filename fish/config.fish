@@ -2,8 +2,8 @@ set fish_greeting
 
 # alias
 alias c="clear"
-# alias coding="cd $HOME/coding"
 alias ls="eza"
+alias vsc="code ."
 alias vi="nvim"
 alias prv="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
 alias gitconfig set_work_git_config
