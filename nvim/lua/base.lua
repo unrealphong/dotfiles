@@ -1,35 +1,37 @@
 local opt = vim.opt
-opt.signcolumn = 'yes'
-opt.number = true
-opt.relativenumber = true
+  local g = vim.g
 
-opt.scrolloff = 5
-opt.sidescrolloff = 5
+  opt.number = true
+  opt.softtabstop = 2
+  opt.tabstop = 4
+  opt.shiftwidth = 2
+  opt.expandtab = true
+  opt.completeopt = { "menuone", "longest", "noselect" }
+  opt.clipboard = "unnamedplus"
+  opt.wildmode = { "longest", "list", "full" }
+  opt.wildmenu = true
+  opt.sh = "zsh"
+  opt.cursorline = true
+  opt.termguicolors = true
+  opt.guifont = "JetBrainsMono Nerd Font Mono:h24"
 
-opt.hlsearch = true
-opt.incsearch = true
+  opt.foldmethod = "indent"
+  opt.foldnestmax = 10
+  opt.foldenable = false
+  opt.autoread = true
+  opt.showtabline = 2
 
-opt.mouse:append 'a'
-opt.clipboard:append 'unnamedplus'
+  opt.undofile = true
+  opt.undodir = vim.fn.expand("$HOME/.tmp/nvim/undo", nil, nil)
+  opt.undolevels = 1000
+  opt.undoreload = 10000
+  opt.ttimeout = true
+  opt.ttimeoutlen = 0
+  opt.inccommand = "nosplit"
+  opt.mouse = "a"-- highlight on yank
 
-opt.tabstop = 2
-opt.shiftwidth = 2
-opt.expandtab = true
-opt.autoindent = true
-
-opt.ignorecase = true
-opt.smartcase = true
-
-opt.swapfile = false
-opt.autoread = true
-vim.bo.autoread = true
-
--- opt.cursorline = true
-opt.termguicolors = true
-
--- highlight on yank
 vim.api.nvim_create_autocmd('TextYankPost', {
-    callback = function()
-        vim.highlight.on_yank()
-    end,
+  callback = function()
+    vim.highlight.on_yank()
+  end,
 })
