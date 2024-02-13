@@ -1,0 +1,49 @@
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[user]
+	name = unrealphong
+	email = hongphongle115@gmail.com
+[init]
+	defaultBranch = master
+[core]
+	excludesfile = ~/.gitignore_global
+[alias]
+  gsync="git checkout master && git fetch upstream && git rebase upstream/master && git push"
+  gs="git status"
+  ga="git add ."
+  gl="git log"
+  gc="git commit -m"
+  gcs="git commit -S -m"
+  gp="git push"
+  gpl="git pull"
+
+  # Them branch - git add branch
+  gab="git checkout -b"
+  # xoa cac thay doi - git delete all
+  gda="git checkout ."
+  # vao branch - git move branch
+  gmb="git checkout"
+  # merge B vao A, - vao branch A - git merge
+  gm="git merge"
+  # xoa branch - git delete branch
+  gdb="git checkout -D"
+  # git graph
+  glg="git log --graph --pretty=format:'%C(bold red)%h%Creset -%C(bold yellow)%d%Creset %s %C(bold green)(%cr) %C(bold blue)<%an>%Creset %C(yellow)%ad%Creset' --abbrev-commit --date=short"
+
+  # reset ve trang thai san sang git add - git reset add
+  gra="git reset --mixed"
+  # reset ve trang thai san sang commit - git reset commit
+  grc="git reset --sort"
+  # xoa commit - git delete commit
+  gdc="git reset --hard"
+  # commit nhanh
+  gg="gaa && gc 'update'"
+
+  # ai commit nhieu nhat
+  gmax="git shortlog -sn --no-merges"
+
+
+

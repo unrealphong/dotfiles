@@ -5,7 +5,6 @@ return {
     'williamboman/mason-lspconfig.nvim',
     'pmizio/typescript-tools.nvim',
     'nvim-lua/plenary.nvim',
-    'simrat39/rust-tools.nvim',
   },
   config = function()
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
@@ -77,20 +76,6 @@ return {
             },
           })
         )
-      end,
-      rust_analyzer = function()
-        require('rust-tools').setup {
-          server = {
-            cmd = {
-              'rustup',
-              'run',
-              'stable',
-              'rust_analyzer',
-            },
-            standalone = true,
-            capabilities = capabilities,
-          },
-        }
       end,
       clangd = function()
         require('lspconfig').clangd.setup(vim.tbl_extend('force', lsp_config, {
