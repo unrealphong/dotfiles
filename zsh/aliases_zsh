@@ -17,44 +17,13 @@ function set_work_git_config() {
 
 alias gitconfig="set_work_git_config"
 
-alias reload='source ~/.zshrc'
-
-alias gsync="git checkout master && git fetch upstream && git rebase upstream/master && git push"
-
-alias gs="git status"
-alias ga="git add ."
-alias gl="git log"
-alias gc="git commit -m"
-alias gcs="git commit -S -m"
-alias gp="git push"
-alias gpl="git pull"
-
-# Them branch - git add branch
-alias gab="git checkout -b"
-# xoa cac thay doi - git delete all
-alias gda="git checkout ."
-# vao branch - git move branch
-alias gmb="git checkout"
-# merge B vao A, - vao branch A - git merge
-alias gm="git merge"
-# xoa branch - git delete branch
-alias gdb="git checkout -D"
-# git graph
-alias glg="git log --graph --pretty=format:'%C(bold red)%h%Creset
--%C(bold yellow)%d%Creset %s %C(bold green)(%cr) %C(bold
-blue)<%an>%Creset %C(yellow)%ad%Creset' --abbrev-commit --date=short"
-
-# reset ve trang thai san sang git add - git reset add
-alias gra="git reset --mixed"
-# reset ve trang thai san sang commit - git reset commit
-alias grc="git reset --sort"
-# xoa commit - git delete commit
-alias gdc="git reset --hard"
-# commit nhanh
-alias gg="gaa && gc 'update'"
-
-# ai commit nhieu nhat
-alias gmax="git shortlog -sn --no-merges"
-
 # open vs code
 alias vsc="code ."
+alias frontend="code . --profile 'frontend'"
+alias backend="code . --profile 'backend'"
+
+# neovim
+alias vi="nvim"
+
+alias reload='source ~/.zshrc'
+
