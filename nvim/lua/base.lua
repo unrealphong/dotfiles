@@ -24,27 +24,12 @@ opt.swapfile = false
 opt.autoread = true
 vim.bo.autoread = true
 
-opt.cursorline = true
+-- opt.cursorline = true
 opt.termguicolors = true
-  opt.guifont = "JetBrainsMono Nerd Font Mono:h24"
-  opt.showbreak = "↪ "
-  opt.listchars = {
-    tab = "→ ",
-    eol = "↲",
-    nbsp = "␣",
-    trail = "•",
-    extends = "⟩",
-    precedes = "⟨"
-  }
-    opt.undofile = true
-  opt.undodir = vim.fn.expand("$HOME/.tmp/nvim/undo", nil, nil)
-vim.g.loaded_perl_provider = 0
 
+-- highlight on yank
 vim.api.nvim_create_autocmd('TextYankPost', {
   callback = function()
-    vim.highlight.on_yank {
-      higroup = 'IncSearch',
-      timeout = 300,
-    }
+    vim.highlight.on_yank()
   end,
 })

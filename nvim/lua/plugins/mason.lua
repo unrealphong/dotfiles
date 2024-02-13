@@ -1,6 +1,7 @@
 return {
   'williamboman/mason.nvim',
   dependencies = {
+    'williamboman/mason-lspconfig.nvim',
     'WhoIsSethDaniel/mason-tool-installer.nvim',
   },
   config = function()
@@ -13,29 +14,18 @@ return {
         },
       },
     }
-    -- require('mason-lspconfig').setup {}
+
+    require('mason-lspconfig').setup {}
     require('mason-tool-installer').setup {
       ensure_installed = {
-        'prettier',
-        'tailwindcss-language-server',
-        'gopls',
-        'mdx-analyzer',
-        'jdtls',
-        'pyright',
-        'clangd',
-        'graphql-language-service-cli',
-        'json-lsp',
         'lua-language-server',
-        'rust-analyzer',
-        'solargraph',
         'stylua',
-        'typescript-language-server',
-        'ember-language-server',
-        'vue-language-server',
-        'astro-language-server',
-        'svelte-language-server',
+        'eslint_d',
+        'prettierd',
+        'rust-analyzer',
+        'graphql-language-service-cli',
+        'prisma-language-server',
       },
-      auto_update = true,
     }
   end,
 }

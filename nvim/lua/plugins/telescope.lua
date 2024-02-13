@@ -22,7 +22,6 @@ return {
           'lazy-lock.json',
           '*-lock.yaml',
           'node_modules',
-          '.yarn',
           '%.lock',
         },
         dynamic_preview_title = true,
