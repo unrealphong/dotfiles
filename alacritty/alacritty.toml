@@ -1,4 +1,4 @@
-import = ["~/workspace/dotfiles/alacritty/themes/everforest.toml"]
+import = ["~/workspace/dotfiles/alacritty/themes/gruvbox_material.toml"]
 [font]
   size = 17 
   [font.normal]
