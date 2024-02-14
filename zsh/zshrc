@@ -48,6 +48,7 @@ export DOTFILES="$WORKSPACE/dotfiles"
 
 # go path
 export GOPATH="$DEVELOPMENT/go"
+export GOBIN="$GOPATH/bin"
 export PATH="$PATH:$DEVELOPMENT/go/bin"
 
 # java
