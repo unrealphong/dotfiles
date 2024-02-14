@@ -5,20 +5,6 @@ return {
     opts = {},
   },
 
-  -- delete buffer
-  {
-    "famiu/bufdelete.nvim",
-    event = "VeryLazy",
-    config = function()
-      vim.keymap.set(
-        "n",
-        "Q",
-        ":lua require('bufdelete').bufdelete(0, false)<cr>",
-        { noremap = true, silent = true, desc = "Delete buffer" }
-      )
-    end,
-  },
-
   -- comments
   {
     "numToStr/Comment.nvim",
@@ -46,19 +32,6 @@ return {
     config = function()
       require("fidget").setup({
         window = { blend = 0 },
-      })
-    end,
-  },
-
-  -- Smooth scrolling neovim plugin written in lua
-  {
-    "karb94/neoscroll.nvim",
-    config = function()
-      require("neoscroll").setup({
-        stop_eof = true,
-        easing_function = "sine",
-        hide_cursor = true,
-        cursor_scrolls_alone = true,
       })
     end,
   },
@@ -220,28 +193,19 @@ return {
       })
     end,
   },
-
-  -- persist sessions
-  {
-    "folke/persistence.nvim",
-    event = "BufReadPre", -- this will only start session saving when an actual file was opened
-    opts = {},
-  },
-
   -- better code annotation
   {
     "danymat/neogen",
     dependencies = {
-        "nvim-treesitter/nvim-treesitter",
-        "L3MON4D3/LuaSnip",
+      "nvim-treesitter/nvim-treesitter",
+      "L3MON4D3/LuaSnip",
     },
     config = function()
-        local neogen = require("neogen")
+      local neogen = require("neogen")
 
-        neogen.setup({
-            snippet_engine = "luasnip"
-        })
+      neogen.setup({
+        snippet_engine = "luasnip",
+      })
     end,
-    -- version = "*"
   },
 }
