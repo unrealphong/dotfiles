@@ -9,5 +9,6 @@ return {
 					diagnostics = { globals = { 'vim' } } }
 			}
 		}
+        lspconfig.tsserver.setup{}
 	end
 }
