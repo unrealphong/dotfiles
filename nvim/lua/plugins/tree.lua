@@ -1,62 +1,89 @@
 return {
-  {
-    'nvim-tree/nvim-tree.lua',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
-    config = function()
-      vim.g.loaded_netrw = 1
-      vim.g.loaded_netrwPlugin = 1
-
-      local api = require 'nvim-tree.api'
-      vim.keymap.set('n', '<c-e>', api.tree.toggle)
-
-      local function my_on_attach(bufnr)
-        local function opts(desc)
-          return {
-            desc = 'nvim-tree: ' .. desc,
-            buffer = bufnr,
-            noremap = true,
-            silent = true,
-            nowait = true,
-          }
-        end
-
-        -- default mappings
-        api.config.mappings.default_on_attach(bufnr)
-
-        -- custom mappings
-        vim.keymap.set('n', '<c-e>', api.tree.toggle, opts 'Toggle')
-        vim.keymap.set('n', '?', api.tree.toggle_help, opts 'Help')
-      end
-
-      require('nvim-tree').setup {
-        view = {
-          width = 35,
+  "nvim-neo-tree/neo-tree.nvim",
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    "nvim-tree/nvim-web-devicons",
+    "MunifTanjim/nui.nvim",
+  },
+  event = "VeryLazy",
+  keys = {
+    { "<c-e>", ":Neotree toggle left<CR>", silent = true, desc = "Left File Explorer" },
+  },
+  config = function()
+    require("neo-tree").setup({
+      close_if_last_window = true,
+      popup_border_style = "single",
+      enable_git_status = true,
+      enable_modified_markers = true,
+      enable_diagnostics = true,
+      sort_case_insensitive = true,
+      default_component_configs = {
+        indent = {
+          with_markers = true,
+          with_expanders = true,
         },
-        on_attach = my_on_attach,
-        filters = {
-          custom = { '^.git$' },
+        modified = {
+          symbol = " ",
+          highlight = "NeoTreeModified",
         },
-        actions = {
-          open_file = { quit_on_open = true },
+        icon = {
+          folder_closed = "",
+          folder_open = "",
+          folder_empty = "",
+          folder_empty_open = "",
         },
-        update_focused_file = {
-          enable = true,
-          update_cwd = true,
-        },
-        git = {
-          enable = false,
-        },
-        diagnostics = {
-          enable = true,
-          show_on_dirs = true,
-          icons = {
-            hint = '',
-            info = '',
-            warning = '',
-            error = '',
+        git_status = {
+          symbols = {
+            -- Change type
+            added = "",
+            deleted = "",
+            modified = "",
+            renamed = "",
+            -- Status type
+            untracked = "",
+            ignored = "",
+            unstaged = "",
+            staged = "",
+            conflict = "",
           },
         },
-      }
-    end,
-  },
+      },
+      window = {
+        position = "float",
+        width = 35,
+      },
+      filesystem = {
+        use_libuv_file_watcher = true,
+        filtered_items = {
+          hide_dotfiles = false,
+          hide_gitignored = false,
+          hide_by_name = {
+            "node_modules",
+          },
+          never_show = {
+            ".DS_Store",
+            "thumbs.db",
+          },
+        },
+      },
+      event_handlers = {
+        {
+          event = "neo_tree_window_after_open",
+          handler = function(args)
+            if args.position == "left" or args.position == "right" then
+              vim.cmd("wincmd =")
+            end
+          end,
+        },
+        {
+          event = "neo_tree_window_after_close",
+          handler = function(args)
+            if args.position == "left" or args.position == "right" then
+              vim.cmd("wincmd =")
+            end
+          end,
+        },
+      },
+    })
+  end,
 }
