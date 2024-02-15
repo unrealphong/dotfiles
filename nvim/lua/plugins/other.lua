@@ -5,6 +5,29 @@ return {
     opts = {},
   },
 
+  {
+    'folke/flash.nvim',
+    event = 'VeryLazy',
+    opts = {},
+    keys = {
+      {
+        's',
+        mode = { 'n', 'x', 'o' },
+        function()
+          require('flash').jump()
+        end,
+        desc = 'Flash',
+      },
+      {
+        'S',
+        mode = { 'n', 'x', 'o' },
+        function()
+          require('flash').treesitter()
+        end,
+        desc = 'Flash Treesitter',
+      },
+    },
+  },
   -- comments
   {
     "numToStr/Comment.nvim",
@@ -33,6 +56,22 @@ return {
       require("fidget").setup({
         window = { blend = 0 },
       })
+    end,
+  },
+  {
+    'rmagatti/alternate-toggler',
+    config = function()
+      require('alternate-toggler').setup {
+        alternates = {
+          ['==='] = '!==',
+          ['=='] = '!=',
+          ['error'] = 'warn',
+        },
+      }
+
+      local keymap = vim.keymap
+
+      keymap.set('n', '<leader>i', '<cmd>ToggleAlternate<cr>')
     end,
   },
 
@@ -125,8 +164,8 @@ return {
   {
     "ggandor/leap.nvim",
     keys = {
-      { "s", mode = { "n", "x", "o" }, desc = "Leap forward to" },
-      { "S", mode = { "n", "x", "o" }, desc = "Leap backward to" },
+      { "s",  mode = { "n", "x", "o" }, desc = "Leap forward to" },
+      { "S",  mode = { "n", "x", "o" }, desc = "Leap backward to" },
       { "gs", mode = { "n", "x", "o" }, desc = "Leap from windows" },
     },
     config = function(_, opts)
@@ -208,4 +247,49 @@ return {
       })
     end,
   },
+  {
+    'fedepujol/move.nvim',
+    config = function()
+      local opts = { noremap = true, silent = true }
+      -- Normal-mode commands
+      vim.keymap.set('n', '<A-Down>', ':MoveLine(1)<CR>', opts)
+      vim.keymap.set('n', '<A-Up>', ':MoveLine(-1)<CR>', opts)
+
+      -- Visual-mode commands
+      vim.keymap.set('v', '<A-Down>', ':MoveBlock(1)<CR>', opts)
+      vim.keymap.set('v', '<A-Up>', ':MoveBlock(-1)<CR>', opts)
+    end,
+  },
+  {
+    'yamatsum/nvim-cursorline',
+    opts = {
+      cursorline = {
+        enable = true,
+        timeout = 1000,
+        number = false,
+      },
+      cursorword = {
+        enable = true,
+        min_length = 3,
+        hl = { underline = true },
+      },
+    },
+  },
+  {
+    'Wansmer/treesj',
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    config = function()
+      local keymap = vim.keymap
+      local tsj = require 'treesj'
+
+      tsj.setup {
+        use_default_keymaps = false,
+      }
+      keymap.set('n', '<leader>j', require('treesj').toggle)
+      keymap.set('n', '<leader>J', function()
+        require('treesj').toggle { split = { recursive = true } }
+      end)
+    end,
+  }
+
 }
