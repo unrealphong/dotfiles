@@ -2,7 +2,7 @@
 
 ## Screenshot
 
-![screenshot](https://github.com/unrealphong/nvim/blob/master/screenshot.png)
+![screenshot](https://github.com/unrealphong/dotfiles/blob/master/screenshot.png)
 
 ## Requirements
 
