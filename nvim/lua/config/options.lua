@@ -40,7 +40,6 @@ vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
 vim.opt.showcmd = false
 vim.opt.ruler = false
-vim.opt.guifont = "JetBrainsMono NF:h17"
 vim.opt.title = true
 vim.opt.confirm = true
 vim.opt.fillchars = { eob = " " }

@@ -33,11 +33,11 @@ return {
   vimls = {
     filetypes = { "vim" },
   },
-  -- tsserver = {},
-  -- rust_analyzer = {},
+  tsserver = {},
+  rust_analyzer = {},
   gopls = {},
   pyright = {},
-
+  clangd = {},
   yamlls = {
     cmd = { "yaml-language-server", "--stdio" },
     filetypes = { "yaml" },

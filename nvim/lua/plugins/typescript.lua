@@ -8,7 +8,7 @@ return {
     require("typescript-tools").setup({
       handlers = {
         ["textDocument/publishDiagnostics"] = api.filter_diagnostics(
-        -- Ignore 'This may be converted to an async function' diagnostics.
+          -- Ignore 'This may be converted to an async function' diagnostics.
           { 6133 }
         ),
       },
@@ -47,8 +47,5 @@ return {
     --     require('conform').format { bufnr = args.buf }
     --   end,
     -- })
-    local keymap = vim.keymap
-    keymap.set('n', '<leader>m', '<cmd>TSToolsOrganizeImports<cr>')
-    keymap.set('n', '<leader>a', '<cmd>TSToolsAddMissingImports<cr>')
   end,
 }

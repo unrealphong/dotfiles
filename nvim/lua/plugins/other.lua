@@ -6,25 +6,25 @@ return {
   },
 
   {
-    'folke/flash.nvim',
-    event = 'VeryLazy',
+    "folke/flash.nvim",
+    event = "VeryLazy",
     opts = {},
     keys = {
       {
-        's',
-        mode = { 'n', 'x', 'o' },
+        "s",
+        mode = { "n", "x", "o" },
         function()
-          require('flash').jump()
+          require("flash").jump()
         end,
-        desc = 'Flash',
+        desc = "Flash",
       },
       {
-        'S',
-        mode = { 'n', 'x', 'o' },
+        "S",
+        mode = { "n", "x", "o" },
         function()
-          require('flash').treesitter()
+          require("flash").treesitter()
         end,
-        desc = 'Flash Treesitter',
+        desc = "Flash Treesitter",
       },
     },
   },
@@ -59,19 +59,19 @@ return {
     end,
   },
   {
-    'rmagatti/alternate-toggler',
+    "rmagatti/alternate-toggler",
     config = function()
-      require('alternate-toggler').setup {
+      require("alternate-toggler").setup({
         alternates = {
-          ['==='] = '!==',
-          ['=='] = '!=',
-          ['error'] = 'warn',
+          ["==="] = "!==",
+          ["=="] = "!=",
+          ["error"] = "warn",
         },
-      }
+      })
 
       local keymap = vim.keymap
 
-      keymap.set('n', '<leader>i', '<cmd>ToggleAlternate<cr>')
+      keymap.set("n", "<leader>i", "<cmd>ToggleAlternate<cr>")
     end,
   },
 
@@ -164,8 +164,8 @@ return {
   {
     "ggandor/leap.nvim",
     keys = {
-      { "s",  mode = { "n", "x", "o" }, desc = "Leap forward to" },
-      { "S",  mode = { "n", "x", "o" }, desc = "Leap backward to" },
+      { "s", mode = { "n", "x", "o" }, desc = "Leap forward to" },
+      { "S", mode = { "n", "x", "o" }, desc = "Leap backward to" },
       { "gs", mode = { "n", "x", "o" }, desc = "Leap from windows" },
     },
     config = function(_, opts)
@@ -248,46 +248,46 @@ return {
     end,
   },
   {
-    'fedepujol/move.nvim',
+    "fedepujol/move.nvim",
     config = function()
       local opts = { noremap = true, silent = true }
       -- Normal-mode commands
-      vim.keymap.set('n', '<A-Down>', ':MoveLine(1)<CR>', opts)
-      vim.keymap.set('n', '<A-Up>', ':MoveLine(-1)<CR>', opts)
+      vim.keymap.set("n", "<A-Down>", ":MoveLine(1)<CR>", opts)
+      vim.keymap.set("n", "<A-Up>", ":MoveLine(-1)<CR>", opts)
 
       -- Visual-mode commands
-      vim.keymap.set('v', '<A-Down>', ':MoveBlock(1)<CR>', opts)
-      vim.keymap.set('v', '<A-Up>', ':MoveBlock(-1)<CR>', opts)
+      vim.keymap.set("v", "<A-Down>", ":MoveBlock(1)<CR>", opts)
+      vim.keymap.set("v", "<A-Up>", ":MoveBlock(-1)<CR>", opts)
     end,
   },
+  -- {
+  --   "yamatsum/nvim-cursorline",
+  --   opts = {
+  --     cursorline = {
+  --       enable = true,
+  --       timeout = 1000,
+  --       number = false,
+  --     },
+  --     cursorword = {
+  --       enable = true,
+  --       min_length = 3,
+  --       hl = { underline = true },
+  --     },
+  --   },
+  -- },
   {
-    'yamatsum/nvim-cursorline',
-    opts = {
-      cursorline = {
-        enable = true,
-        timeout = 1000,
-        number = false,
-      },
-      cursorword = {
-        enable = true,
-        min_length = 3,
-        hl = { underline = true },
-      },
-    },
-  },
-  {
-    'Wansmer/treesj',
-    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    "Wansmer/treesj",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
     config = function()
       local keymap = vim.keymap
-      local tsj = require 'treesj'
+      local tsj = require("treesj")
 
-      tsj.setup {
+      tsj.setup({
         use_default_keymaps = false,
-      }
-      keymap.set('n', '<leader>j', require('treesj').toggle)
-      keymap.set('n', '<leader>J', function()
-        require('treesj').toggle { split = { recursive = true } }
+      })
+      keymap.set("n", "<leader>j", require("treesj").toggle)
+      keymap.set("n", "<leader>J", function()
+        require("treesj").toggle({ split = { recursive = true } })
       end)
     end,
   },
@@ -295,18 +295,23 @@ return {
     "ThePrimeagen/refactoring.nvim",
     dependencies = {
       { "nvim-lua/plenary.nvim" },
-      { "nvim-treesitter/nvim-treesitter" }
+      { "nvim-treesitter/nvim-treesitter" },
     },
     config = function()
-      require("refactoring").setup({})
-    end
+      require("refactoring").setup()
+    end,
   },
   {
-    'phaazon/hop.nvim',
-    branch = 'v2', -- optional but strongly recommended
+    "phaazon/hop.nvim",
+    branch = "v2", -- optional but strongly recommended
     config = function()
       -- you can configure Hop the way you like here; see :h hop-config
-      require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
-    end
-  }
+      require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
+    end,
+  },
+  {
+    "windwp/nvim-autopairs",
+    event = "InsertEnter",
+    opts = {},
+  },
 }
