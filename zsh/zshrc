@@ -2,10 +2,9 @@ export ZSH="$HOME/.oh-my-zsh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Enable prompt themes
-# [ -f ~/$DOTFILES/zsh/themes/zsh-v2.theme ] && source ~/$DOTFILES/zsh/themes/zsh-v2.theme
-# Fix ls colors
-#
+# theme
+ZSH_THEME="robbyrussell"
+
 plugins=(
   git
   docker
