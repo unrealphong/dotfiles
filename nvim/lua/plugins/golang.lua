@@ -6,10 +6,10 @@ return {
       "neovim/nvim-lspconfig",
       "nvim-treesitter/nvim-treesitter",
       "leoluz/nvim-dap-go",
+      "folke/noice.nvim",
     },
     config = function()
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
-      vim.notify = require("notify")
 
       require("go").setup({
         capabilities = capabilities,

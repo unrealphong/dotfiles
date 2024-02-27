@@ -19,7 +19,6 @@ return {
         section_separators = { left = "", right = "" },
         disabled_filetypes = {
           statusline = {
-            "alfa-nvim",
             "help",
             "neo-tree",
             "Trouble",
@@ -30,7 +29,7 @@ return {
         },
       },
       sections = {
-        lualine_a = {},
+        lualine_a = { { "fancy_mode", width = 6 } },
         lualine_b = {
           "fancy_branch",
         },

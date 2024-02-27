@@ -1,25 +1,23 @@
-import = ["~/workspace/dotfiles/alacritty/themes/gruvbox_material.toml"]
+import = ["~/workspace/dotfiles/alacritty/themes/rose-pine-dawn.toml"]
 [font]
-  size = 17 
-  [font.normal]
-    family = "GeistMono NF"
+size = 16
+[font.normal]
+family = "JetBrainsMono NF"
 [window]
-  padding = { x = 10, y = 10 }
-  dimensions = { columns = 120, lines = 40  }
-  opacity= 1
-  decorations = "None" #  "Full" | "None" | "Transparent" | "Buttonless"
+padding = { x = 10, y = 10 }
+dimensions = { columns = 120, lines = 40 }
+opacity = 1
+decorations = "Buttonless"                 #  "Full" | "None" | "Transparent" | "Buttonless"
 [cursor]
-  unfocused_hollow = true
-  style = {shape ="Underline",blinking = "On"} # shape = "Block" | "Underline" | "Beam" 
+unfocused_hollow = true
+style = { shape = "Block", blinking = "On" } # shape = "Block" | "Underline" | "Beam" 
 
 [env]
-  TERM = "xterm-256color"
+TERM = "xterm-256color"
 
 [scrolling]
-  history = 10000 
+history = 10000
 
 [[keyboard.bindings]]
-  key = "F12"
-  action = "ToggleFullscreen"
-
-
+key = "F12"
+action = "ToggleFullscreen"

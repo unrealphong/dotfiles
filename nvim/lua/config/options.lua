@@ -1,45 +1,39 @@
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+local opt = vim.opt
+local g = vim.g
 
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+opt.number = true
+opt.softtabstop = 2
+opt.tabstop = 4
+opt.shiftwidth = 2
+opt.expandtab = true
+opt.completeopt = { "menuone", "longest", "noselect" }
+opt.clipboard = "unnamedplus"
+opt.wildmode = { "longest", "list", "full" }
+opt.wildmenu = true
+opt.sh = "zsh"
+opt.cursorline = true
+opt.termguicolors = true
+opt.guifont = "JetBrainsMono Nerd Font Mono:h24"
+opt.showbreak = "↪ "
 
-vim.opt.incsearch = true
-vim.opt.backup = false
-vim.opt.clipboard = "unnamedplus"
-vim.opt.cmdheight = 1
-vim.opt.completeopt = { "menuone", "noselect" }
-vim.opt.conceallevel = 0
-vim.opt.fileencoding = "utf-8"
-vim.opt.hlsearch = true
-vim.opt.ignorecase = true
-vim.opt.mouse = "a"
-vim.opt.pumheight = 10
-vim.opt.showmode = false
-vim.opt.showtabline = 0
-vim.opt.smartcase = true
-vim.opt.smartindent = true
-vim.opt.splitbelow = true
-vim.opt.splitright = true
-vim.opt.swapfile = false
-vim.opt.termguicolors = true
-vim.opt.timeoutlen = 1000
-vim.opt.undofile = true
-vim.opt.updatetime = 100
-vim.opt.writebackup = false
-vim.opt.expandtab = true
-vim.opt.shiftwidth = 2
-vim.opt.cursorline = false
-vim.opt.number = true
-vim.opt.breakindent = true
-vim.opt.relativenumber = true
-vim.opt.numberwidth = 4
-vim.opt.signcolumn = "yes"
-vim.opt.wrap = false
-vim.opt.scrolloff = 8
-vim.opt.sidescrolloff = 8
-vim.opt.showcmd = false
-vim.opt.ruler = false
-vim.opt.title = true
-vim.opt.confirm = true
-vim.opt.fillchars = { eob = " " }
+opt.foldmethod = "indent"
+opt.foldnestmax = 10
+opt.foldenable = false
+opt.autoread = true
+opt.showtabline = 2
+
+opt.undofile = true
+opt.undolevels = 1000
+opt.undoreload = 10000
+opt.ttimeout = true
+opt.ttimeoutlen = 0
+opt.inccommand = "nosplit"
+opt.mouse = "a"
+
+g.mapleader = " "
+
+vim.api.nvim_create_autocmd("TextYankPost", {
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+})

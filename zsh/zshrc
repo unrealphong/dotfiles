@@ -66,10 +66,10 @@ export PATH="$PATH:$HOME/.rvm/bin"
 # Added by serverless binary installer
 export PATH="$HOME/.serverless/bin:$PATH"
 
-if [[ -t 0 ]]; then
-  source $DOTFILES/zsh/greeting.zsh
-  zsh_greeting
-fi
+# if [[ -t 0 ]]; then
+#   source $DOTFILES/zsh/greeting.zsh
+#   zsh_greeting
+# fi
 
 # export PKG_CONFIG_PATH="/opt/homebrew/opt/postgresql@16/lib/pkgconfig"
 export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
@@ -95,3 +95,6 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# bun completions
+[ -s "/Users/lehongphong/.bun/_bun" ] && source "/Users/lehongphong/.bun/_bun"
