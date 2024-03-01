@@ -12,13 +12,13 @@ return {
       "telescope-dap.nvim",
       "kkharji/sqlite.lua",
       "nvim-telescope/telescope-frecency.nvim",
+      "nvim-telescope/telescope-file-browser.nvim",
     },
     config = function()
       local telescope = require("telescope")
       local actions = require("telescope.actions")
       local trouble = require("trouble.providers.telescope")
       local icons = require("config.icons")
-
       vim.api.nvim_create_autocmd("FileType", {
         pattern = "TelescopeResults",
         callback = function(ctx)
@@ -146,6 +146,19 @@ return {
           },
         },
         extensions = {
+          file_browser = {
+            theme = "ivy",
+            -- disables netrw and use telescope-file-browser in its place
+            hijack_netrw = true,
+            mappings = {
+              ["i"] = {
+                -- your custom insert mode mappings
+              },
+              ["n"] = {
+                -- your custom normal mode mappings
+              },
+            },
+          },
           fzf = {
             fuzzy = true, -- false will only do exact matching
             override_generic_sorter = true, -- override the generic sorter
@@ -185,6 +198,7 @@ return {
       telescope.load_extension("dap")
       telescope.load_extension("frecency")
       telescope.load_extension("noice")
+      telescope.load_extension("file_browser")
     end,
   },
 }

@@ -36,8 +36,8 @@ return {
       long_message_to_split = true,
       inc_rename = true,
     },
-    cmdline = {
-      view = "cmdline",
-    },
+    -- cmdline = {
+    --   view = "cmdline",
+    -- },
   },
 }

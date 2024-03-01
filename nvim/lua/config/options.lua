@@ -13,7 +13,7 @@ opt.wildmenu = true
 opt.sh = "zsh"
 opt.cursorline = true
 opt.termguicolors = true
-opt.guifont = "JetBrainsMono Nerd Font Mono:h24"
+-- opt.guifont = "JetBrainsMono Nerd Font Mono:h24"
 opt.showbreak = "↪ "
 
 opt.foldmethod = "indent"

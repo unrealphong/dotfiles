@@ -10,6 +10,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # theme
 ZSH_THEME="robbyrussell"
 
+source $HOME/antigen.zsh
+
 plugins=(
   brew
   fzf
@@ -59,6 +61,9 @@ export DOTFILES="$WORKSPACE/dotfiles"
 export GOPATH="$DEVELOPMENT/go"
 export GOBIN="$GOPATH/bin"
 export PATH="$PATH:$DEVELOPMENT/go/bin"
+
+# flutter
+export PATH=$HOME/development/flutter/bin:$PATH
 
 # java
 export JAVA_HOME="/opt/homebrew/opt/openjdk"
