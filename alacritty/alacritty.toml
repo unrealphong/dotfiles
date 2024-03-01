@@ -1,8 +1,8 @@
-import = ["~/workspace/dotfiles/alacritty/themes/rose-pine-dawn.toml"]
+import = ["~/workspace/dotfiles/alacritty/themes/gruvbox_material.toml"]
 [font]
-size = 16
+size = 18
 [font.normal]
-family = "JetBrainsMono NF"
+family = "GeistMono NF"
 [window]
 padding = { x = 10, y = 10 }
 dimensions = { columns = 120, lines = 40 }
