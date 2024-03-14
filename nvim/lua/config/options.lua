@@ -1,6 +1,10 @@
 local opt = vim.opt
 local g = vim.g
 
+opt.wrap = true
+opt.textwidth = 80
+opt.ignorecase = true
+opt.smartcase = true
 opt.number = true
 opt.softtabstop = 2
 opt.tabstop = 4
@@ -13,8 +17,16 @@ opt.wildmenu = true
 opt.sh = "zsh"
 opt.cursorline = true
 opt.termguicolors = true
--- opt.guifont = "JetBrainsMono Nerd Font Mono:h24"
+opt.guifont = "GeistMono Nerd Font:h20"
 opt.showbreak = "↪ "
+opt.listchars = {
+  tab = "→ ",
+  eol = "↲",
+  nbsp = "␣",
+  trail = "•",
+  extends = "⟩",
+  precedes = "⟨",
+}
 
 opt.foldmethod = "indent"
 opt.foldnestmax = 10

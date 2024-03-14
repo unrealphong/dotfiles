@@ -9,11 +9,11 @@ return {
       handlers = {
         ["textDocument/publishDiagnostics"] = api.filter_diagnostics(
           -- Ignore 'This may be converted to an async function' diagnostics.
-          { 6133 }
+          { 6133, 80006 }
         ),
       },
       settings = {
-        -- separate_diagnostic_server = true,
+        separate_diagnostic_server = true,
         expose_as_code_action = "all",
         tsserver_max_memory = "auto",
         complete_function_calls = true,
