@@ -1,7 +1,7 @@
 local wezterm = require("wezterm")
 
 return {
-	color_scheme = "Gruvbox dark, hard (base16)",
+	color_scheme = "Catppuccin Mocha",
 
 	window_decorations = "RESIZE",
 	use_fancy_tab_bar = false,
