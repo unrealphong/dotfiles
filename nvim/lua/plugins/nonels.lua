@@ -3,11 +3,15 @@ return {
     "nvimtools/none-ls.nvim",
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
-      "jose-elias-alvarez/null-ls.nvim",
       "jay-babu/mason-null-ls.nvim",
       "nvim-lua/plenary.nvim",
+      "nvimtools/none-ls-extras.nvim",
+      "gbprod/none-ls-shellcheck.nvim",
     },
     config = function()
+      require("null-ls").register(require("none-ls-shellcheck.diagnostics"))
+      require("null-ls").register(require("none-ls-shellcheck.code_actions"))
+
       local mason_null_ls = require("mason-null-ls")
       local null_ls = require("null-ls")
 
@@ -24,10 +28,10 @@ return {
           "shellcheck", -- shell linter
           "yamllint", -- yaml linter
           "buf", -- buf formatter
-          "beautysh", -- shell formatter
+          "shfmt", -- shell formatter
           -- "gofumpt", -- go formatter
           "yamlfmt", -- yaml formatter
-          "spell", -- spell checker
+          -- "spell", -- spell checker
           "black", -- python formatter
         },
       })
@@ -47,18 +51,19 @@ return {
           -- formatting.gofumpt,
           formatting.terraform_fmt,
           formatting.buf,
-          formatting.beautysh,
+          formatting.shfmt,
           formatting.yamlfmt,
           formatting.black,
 
-          diagnostics.eslint_d.with({ -- js/ts linter
-            condition = function(utils)
-              return utils.root_has_file({ ".eslintrc.js", ".eslintrc.cjs" }) -- only enable if root has .eslintrc.js or .eslintrc.cjs
-            end,
-          }),
+          -- diagnostics.eslint_d,
+          -- diagnosticsueslint_d.with({ -- js/ts linter
+          --   condition = function(utils)
+          --     return utils.root_has_file({ ".eslintrc.js", ".eslintrc.cjs" }) -- only enable if root has .eslintrc.js or .eslintrc.cjs
+          --   end,
+          -- }),
           -- diagnostics.golangci_lint,
           diagnostics.terraform_validate,
-          diagnostics.shellcheck,
+          -- diagnostics.shellcheck,
           diagnostics.yamllint,
 
           code_actions.gitsigns,
