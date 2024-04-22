@@ -196,7 +196,7 @@ return {
       telescope.load_extension("ui-select")
       telescope.load_extension("refactoring")
       telescope.load_extension("dap")
-      telescope.load_extension("frecency")
+      -- telescope.load_extension("frecency")
       telescope.load_extension("noice")
       telescope.load_extension("file_browser")
     end,

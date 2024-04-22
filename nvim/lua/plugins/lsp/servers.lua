@@ -34,6 +34,7 @@ return {
     filetypes = { "vim" },
   },
   -- tsserver = {},
+  tailwindcss = {},
   rust_analyzer = {},
   gopls = {},
   pyright = {},

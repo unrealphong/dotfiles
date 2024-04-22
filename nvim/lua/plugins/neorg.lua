@@ -3,7 +3,7 @@ return {
   build = ":Neorg sync-parsers",
   lazy = false, -- specify lazy = false because some lazy.nvim distributions set lazy = true by default
   -- tag = "*",
-  dependencies = { "nvim-lua/plenary.nvim" },
+  dependencies = { "nvim-lua/plenary.nvim", "vhyrro/luarocks.nvim", "nvim-neorg/lua-utils.nvim", "pysan3/pathlib.nvim" },
   config = function()
     require("neorg").setup({
       load = {

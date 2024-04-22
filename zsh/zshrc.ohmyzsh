@@ -25,24 +25,37 @@ function set_work_git_config() {
     fi
 }
 
+function set_bitbucket_git_config() {
+    local repo_path="$(git rev-parse --show-toplevel 2>/dev/null)"
+
+    if [ -n "$repo_path" ]; then
+        cd "$repo_path"
+        git config user.name "phonglh-1050"
+        git config user.email "phonglh@bsscommerce.com
+"
+        
+        echo "Git user configured for the project."
+
+    else
+        echo "Could not find Git workspace or directory repo."
+    fi
+}
 alias gitconfig="set_work_git_config"
+alias bitbucketconfig="set_bitbucket_git_config"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# ZSH_THEME="robbyrussell"
+ZSH_THEME="robbyrussell"
 
-# Enable prompt themes
-[ -f ~/.zshrc.theme ] && source ~/.zshrc.theme
-# Fix ls colors
-#
 plugins=(
-  git
-  yarn
-  docker
+    git
+    gh
+    nvm
 )
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 source $ZSH/oh-my-zsh.sh
 
 export LANG=en_US.UTF-8
@@ -102,3 +115,6 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+# export VOLTA_HOME="$HOME/.volta"
+# export PATH="$VOLTA_HOME/bin:$PATH"

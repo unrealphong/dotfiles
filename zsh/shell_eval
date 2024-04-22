@@ -1,3 +1,4 @@
 eval "$(atuin init zsh)"
 eval "$(zoxide init zsh)"
+eval "$(thefuck --alias)"
 eval "$(starship init zsh)"

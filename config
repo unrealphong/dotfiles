@@ -6,6 +6,10 @@ Host gitlab-personal.com
     HostName gitlab.com
     User git
     IdentityFile ~/.ssh/id_rsa_personal
+Host bitbucket-personal.org
+    HostName bitbucket.org
+    User git
+    IdentityFile ~/.ssh/id_rsa_personal 
 
 Host github-primary.com    
     HostName github.com
@@ -15,4 +19,10 @@ Host gitlab-primary.com
     HostName gitlab.com
     User git
     IdentityFile ~/.ssh/id_rsa_primary 
+
+Host bitbucket-bss.org
+    HostName bitbucket.org
+    User git
+    IdentityFile ~/.ssh/id_rsa_bss 
+
 
