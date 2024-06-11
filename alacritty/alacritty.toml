@@ -1,11 +1,11 @@
-import = ["~/workspace/dotfiles/alacritty/themes/rose-pine.toml"]
+import = ["~/workspace/dotfiles/alacritty/themes/gruvbox_material.toml"]
 live_config_reload = true 
 
 [font]
 size = 16
-normal = {family = "GeistMono Nerd Font",  style = "Regular"}
-bold = {family = "GeistMono Nerd Font",  style = "Bold"}
-italic = {family = "GeistMono Nerd Font",  style = "Italic"}
+normal = {family = "JetBrainsMono Nerd Font Mono",  style = "Regular"}
+bold = {family = "JetBrainsMono Nerd Font Mono",  style = "Bold"}
+italic = {family = "JetBrainsMono Nerd Font Mono",  style = "Italic"}
 
 [window]
 padding = { x = 10, y = 10 }
@@ -13,7 +13,7 @@ dimensions = { columns = 120, lines = 40 }
 opacity = 1 
 decorations = "Buttonless"                 #  "Full" | "None" | "Transparent" | "Buttonless"
 blur = true
-startup_mode = "Maximized" # "Windowed" | "Maximized" | "Fullscreen" | "SimpleFullscreen"
+startup_mode = "Windowed" # "Windowed" | "Maximized" | "Fullscreen" | "SimpleFullscreen"
 
 [cursor]
 unfocused_hollow = true
