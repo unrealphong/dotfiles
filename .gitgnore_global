@@ -1,0 +1,12 @@
+## git config --global core.excludesfile '~/.gitignore_global'
+
+.DS_Store
+
+.idea
+.fleet
+.vscode
+
+node_modules
+npm-debug.log
+yarn-error.log
+
