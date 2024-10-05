@@ -1,0 +1,50 @@
+add_newline = false
+scan_timeout = 10
+
+format = """
+$directory$git_branch$git_status$python$docker_context$kubernetes$aws$azure$pulumi
+$character"""
+
+[character]
+success_symbol = "[\\$](bold green)"
+error_symbol = "[\\$](bold red)"
+
+[directory]
+style = "bold #d79921"
+read_only = " 🔒"
+
+[git_branch]
+symbol = ""
+style = "bold #689d6a"
+truncation_length = 10
+
+[git_status]
+format = '([\[$all_status\]]($style) )'
+stashed = ""
+style = "bold #b8bb26"
+
+[kubernetes]
+disabled = false
+symbol = "󱃾 "
+format = "via [$symbol$context/$namespace]($style) "
+style = "bold #d79921"
+
+[python]
+symbol = " "
+
+[docker_context]
+only_with_files = false
+symbol = " "
+
+[aws]
+format = "on [$symbol($profile )]($style)"
+force_display = true
+
+[azure]
+disabled = true
+format = "on [$symbol($subscription)]($style) "
+
+[azure.subscription_aliases]
+"Herond Subscription" = "Herond"
+
+[pulumi]
