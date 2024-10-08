@@ -20,3 +20,6 @@ else
 end
 # <<< conda initialize <<<
 
+
+# Added by `rbenv init` on Tue Oct  8 14:31:41 +07 2024
+status --is-interactive; and rbenv init - --no-rehash fish | source

@@ -28,4 +28,6 @@ return {
       },
     },
   },
+  solargraph = {},
+  ruby_lsp = {},
 }
