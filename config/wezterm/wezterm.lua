@@ -1,6 +1,5 @@
 local wezterm = require("wezterm")
 local action = wezterm.action
-
 local config = {}
 
 if wezterm.config_builder then
@@ -10,8 +9,8 @@ end
 -- config.color_scheme = 'rose-pine-moon'
 config.window_decorations = "RESIZE"
 config.window_frame = {
-	font = wezterm.font("JetBrainsMono Nerd Font"),
-	font_size = 14.0,
+	font = wezterm.font("CaskaydiaCove Nerd Font"),
+	font_size = 16.0,
 }
 config.window_padding = {
 	left = 48,
