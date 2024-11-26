@@ -1,5 +1,6 @@
 local wezterm = require("wezterm")
 local action = wezterm.action
+
 local config = {}
 
 if wezterm.config_builder then
@@ -8,15 +9,14 @@ end
 
 -- config.color_scheme = 'rose-pine-moon'
 config.window_decorations = "RESIZE"
-config.window_frame = {
-	font = wezterm.font("CaskaydiaCove Nerd Font"),
-	font_size = 16.0,
-}
+config.font = wezterm.font("Martian Mono", { weight = "DemiLight" })
+config.font_size = 15.0
+
 config.window_padding = {
-	left = 48,
-	right = 48,
-	top = 48,
-	bottom = 24,
+	left = 24,
+	right = 24,
+	top = 24,
+	bottom = 16,
 }
 
 config.tab_bar_at_bottom = true
@@ -26,9 +26,7 @@ config.keys = {
 	{
 		key = "b",
 		mods = "CMD",
-		action = action({
-			PaneSelect = {},
-		}),
+		action = action({ PaneSelect = {} }),
 	},
 	{
 		key = "{",
@@ -54,29 +52,42 @@ config.keys = {
 			confirm = true,
 		}),
 	},
+	{
+		key = "d",
+		mods = "CMD",
+		action = action.SplitVertical({ domain = "CurrentPaneDomain" }),
+	},
+	{
+		key = "d",
+		mods = "CMD|SHIFT",
+		action = action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
+	},
+	{
+		key = "z",
+		mods = "CMD",
+		action = action.TogglePaneZoomState,
+	},
+	{
+		key = "`",
+		mods = "CMD",
+		action = action.ToggleAlwaysOnTop,
+	},
 }
 
 config.colors = {
 	foreground = "rgba(219, 215, 202, 0.93)",
 	background = "#121212",
-
 	cursor_fg = "#222222",
-	selection_fg = "#222222",
+	selection_fg = "rgba(219,215,202,0.93)",
 	selection_bg = "rgba(238, 238, 238, 0.094)",
-
 	scrollbar_thumb = "rgba(222, 220, 213, 0.063)",
-
 	split = "#252525",
-
 	ansi = { "#393a34", "#cb7676", "#4d9375", "#e6cc77", "#6394bf", "#d9739f", "#5eaab5", "#dbd7ca" },
 	brights = { "#777777", "#cb7676", "#4d9375", "#e6cc77", "#6394bf", "#d9739f", "#5eaab5", "#ffffff" },
-
 	indexed = {
 		[136] = "#bd976a",
 	},
-
 	compose_cursor = "#d4976c",
-
 	copy_mode_active_highlight_bg = {
 		Color = "#292929",
 	},
@@ -89,7 +100,6 @@ config.colors = {
 	copy_mode_inactive_highlight_fg = {
 		Color = "#222222",
 	},
-
 	quick_select_label_bg = {
 		Color = "#4d9375",
 	},
@@ -126,6 +136,8 @@ config.colors = {
 		},
 	},
 }
+
+config.window_background_opacity = 0.96
 config.inactive_pane_hsb = {
 	saturation = 0.75,
 	brightness = 0.5,
