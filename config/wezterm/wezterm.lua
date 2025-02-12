@@ -9,8 +9,8 @@ end
 
 -- config.color_scheme = 'rose-pine-moon'
 config.window_decorations = "RESIZE"
-config.font = wezterm.font("Martian Mono", { weight = "DemiLight" })
-config.font_size = 15.0
+config.font = wezterm.font("MartianMono Nerd Font", { weight = "Regular", stretch = "Normal" })
+config.font_size = 16
 
 config.window_padding = {
 	left = 24,

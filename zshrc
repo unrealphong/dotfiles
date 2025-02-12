@@ -60,3 +60,7 @@ eval $(thefuck --alias)
 
 source <(fzf --zsh)
 
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
