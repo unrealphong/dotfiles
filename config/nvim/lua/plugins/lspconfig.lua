@@ -113,6 +113,24 @@ return {
       },
     })
 
+    require("lspconfig").volar.setup({
+      filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+      init_options = {
+        typescript = {
+          tsdk = "/Users/lehongphong/.nvm/versions/node/v22.14.0/lib/node_modules/typescript/lib",
+        },
+        vue = {
+          hybridMode = false,
+        },
+      },
+      on_new_config = function(new_config, new_root_dir)
+        local tsdk = vim.fs.find("node_modules/typescript/lib", { upward = true, path = new_root_dir })[1]
+        if tsdk then
+          new_config.init_options.typescript.tsdk = tsdk
+        end
+      end,
+    })
+
     local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
     for type, icon in pairs(signs) do
       local hl = "DiagnosticSign" .. type

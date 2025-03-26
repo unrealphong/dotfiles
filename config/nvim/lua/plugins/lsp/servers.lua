@@ -1,16 +1,5 @@
 return {
-  ts_ls = {
-    init_options = {
-      plugins = {
-        {
-          name = "@vue/typescript-plugin",
-          location = "~/.local/share/nvim/mason/packages/vue-language-server/node_modules/@vue/language-server/node_modules/@vue/typescript-plugin",
-          languages = { "vue" },
-        },
-      },
-    },
-    filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
-  },
+  ts_ls = {},
   tailwindcss = {},
   lua_ls = {},
   jdtls = {},
