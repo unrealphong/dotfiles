@@ -53,7 +53,7 @@ export PATH="$HOME/.composer/vendor/bin:$PATH"
 export PATH="/Users/lehongphong/.deno/bin:$PATH"
 
 # shell eval
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
 eval "$(atuin init zsh)"
 eval "$(zoxide init zsh)"
 eval $(thefuck --alias)
