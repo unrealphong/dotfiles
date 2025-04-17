@@ -1,27 +1,48 @@
-add_newline = false
+add_newline = true
 scan_timeout = 10
 
 format = """
-$directory$git_branch$git_status$python$docker_context$kubernetes$aws$azure$pulumi
+$directory$git_branch$git_status$python$nodejs$docker_context$kubernetes$aws$azure$pulumi
 $character"""
 
 [character]
-success_symbol = "[\\$](bold green)"
-error_symbol = "[\\$](bold red)"
+format = "$symbol "
+success_symbol = "[󰘧](bold italic bright-yellow)"
+error_symbol = "[○](italic purple)"
 
 [directory]
 style = "bold #d79921"
 read_only = " 🔒"
 
 [git_branch]
-symbol = ""
-style = "bold #689d6a"
-truncation_length = 10
+format = " [$branch(:$remote_branch)]($style)"
+symbol = "[△](bold italic bright-blue)"
+style = "italic bright-blue"
+truncation_symbol = "⋯"
+truncation_length = 11
+ignore_branches = ["main", "master"]
+only_attached = true
+
+[git_metrics]
+format = '([▴$added]($added_style))([▿$deleted]($deleted_style))'
+added_style = 'italic dimmed green'
+deleted_style = 'italic dimmed red'
+ignore_submodules = true
+disabled = false
 
 [git_status]
-format = '([\[$all_status\]]($style) )'
-stashed = ""
-style = "bold #b8bb26"
+style = "bold italic bright-blue"
+format = "([⎪$ahead_behind$staged$modified$untracked$renamed$deleted$conflicted$stashed⎥]($style))"
+conflicted = "[◪◦](italic bright-magenta)"
+ahead = "[▴│[${count}](bold white)│](italic green)"
+behind = "[▿│[${count}](bold white)│](italic red)"
+diverged = "[◇ ▴┤[${ahead_count}](regular white)│▿┤[${behind_count}](regular white)│](italic bright-magenta)"
+untracked = "[◌◦](italic bright-yellow)"
+stashed = "[◃◈](italic white)"
+modified = "[●◦](italic yellow)"
+staged = "[▪┤[$count](bold white)│](italic bright-cyan)"
+renamed = "[◎◦](italic bright-blue)"
+deleted = "[✕](italic red)"
 
 [kubernetes]
 disabled = false
@@ -29,7 +50,13 @@ symbol = "󱃾 "
 format = "via [$symbol$context/$namespace]($style) "
 style = "bold #d79921"
 
+[nodejs]
+symbol = " "
+detect_files = ["package.json", ".node-version"]
+detect_folders = ["node_modules"]
+
 [python]
+disabled = false
 symbol = " "
 
 [docker_context]
@@ -41,10 +68,19 @@ format = "on [$symbol($profile )]($style)"
 force_display = true
 
 [azure]
-disabled = true
+disabled = false
 format = "on [$symbol($subscription)]($style) "
 
 [azure.subscription_aliases]
 "Herond Subscription" = "Herond"
 
+[golang]
+disabled = false
+symbol = " "
+
+[php]
+symbol = " "
+
+[rust]
+symbol = "󱘗 "
 [pulumi]

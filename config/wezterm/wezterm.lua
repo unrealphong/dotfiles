@@ -72,6 +72,11 @@ config.keys = {
 		mods = "CMD",
 		action = action.ToggleAlwaysOnTop,
 	},
+	{
+		key = "n",
+		mods = "SHIFT|CTRL",
+		action = wezterm.action.ToggleFullScreen,
+	},
 }
 
 config.colors = {

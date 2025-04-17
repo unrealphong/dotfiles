@@ -1,0 +1,8 @@
+theme = dark:catppuccin-frappe,light:catppuccin-latte
+window-decoration = false
+
+keybind = ctrl+z=close_surface
+keybind = ctrl+d=new_split:right
+
+font-family = JetBrainsMono Nerd Font Mono
+font-size = 16
