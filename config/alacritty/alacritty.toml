@@ -1,5 +1,5 @@
 [general]
-import = ["~/.config/alacritty/themes/gruvbox.toml"]
+import = ["~/.config/alacritty/themes/everforest.toml"]
 ipc_socket = false
 live_config_reload = true
 
@@ -14,8 +14,8 @@ draw_bold_text_with_bright_colors = true
 unfocused_hollow = true
 
 [cursor.style]
-blinking = "Off"
-shape = "Block"
+blinking = "On"
+shape = "Underline"
 
 [debug]
 log_level = "Info"
@@ -27,14 +27,14 @@ render_timer = false
 TERM = "xterm-256color"
 
 [font]
-size = 16
+size = 14
 
 [font.bold]
-family = "JetBrainsMono NFM"
+family = "JetBrainsMono Nerd Font Mono"
 style = "Bold"
 
 [font.bold_italic]
-family = "JetBrainsMono NFM"
+family = "JetBrainsMono Nerd Font Mono"
 style = "Bold Italic"
 
 [font.glyph_offset]
@@ -42,11 +42,11 @@ x = 0
 y = 0
 
 [font.italic]
-family = "JetBrainsMono NFM"
+family = "JetBrainsMono Nerd Font Mono"
 style = "Bold Italic"
 
 [font.normal]
-family = "JetBrainsMono Nerd Font Mono"
+family = "MartianMono Nerd Font Mono"
 style = "Regular"
 
 [font.offset]
@@ -84,13 +84,13 @@ semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
 decorations = "Buttonless"
 dynamic_padding = false
 dynamic_title = true
-opacity = 1.0
-startup_mode = "Windowed"
+opacity = 0.9
+startup_mode = "Maximized"
 
 [window.dimensions]
 columns = 0
 lines = 0
 
 [window.padding]
-x = 10
-y = 10
+x = 5
+y = 5

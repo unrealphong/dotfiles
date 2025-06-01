@@ -15,7 +15,7 @@ style = "bold #d79921"
 read_only = " 🔒"
 
 [git_branch]
-format = " [$branch(:$remote_branch)]($style)"
+format = "[$branch(:$remote_branch)]($style) "
 symbol = "[△](bold italic bright-blue)"
 style = "italic bright-blue"
 truncation_symbol = "⋯"

@@ -7,10 +7,15 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
+wezterm.on("gui-startup", function(cmd)
+	local tab, pane, window = wezterm.mux.spawn_window(cmd or {})
+	window:gui_window():maximize()
+end)
+
 -- config.color_scheme = 'rose-pine-moon'
 config.window_decorations = "RESIZE"
 config.font = wezterm.font("MartianMono Nerd Font", { weight = "Regular", stretch = "Normal" })
-config.font_size = 12
+config.font_size = 14
 
 config.window_padding = {
 	left = 24,
@@ -18,7 +23,8 @@ config.window_padding = {
 	top = 24,
 	bottom = 16,
 }
-
+config.initial_cols = 120
+config.initial_rows = 40
 config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = false
 config.pane_select_font_size = 36
@@ -80,15 +86,20 @@ config.keys = {
 }
 
 config.colors = {
-	foreground = "rgba(219, 215, 202, 0.93)",
-	background = "#121212",
-	cursor_fg = "#222222",
-	selection_fg = "rgba(219,215,202,0.93)",
-	selection_bg = "rgba(238, 238, 238, 0.094)",
-	scrollbar_thumb = "rgba(222, 220, 213, 0.063)",
-	split = "#252525",
-	ansi = { "#393a34", "#cb7676", "#4d9375", "#e6cc77", "#6394bf", "#d9739f", "#5eaab5", "#dbd7ca" },
-	brights = { "#777777", "#cb7676", "#4d9375", "#e6cc77", "#6394bf", "#d9739f", "#5eaab5", "#ffffff" },
+	foreground = "#c0caf5",
+	background = "#1a1b26",
+	cursor_bg = "#c0caf5",
+	cursor_border = "#c0caf5",
+	cursor_fg = "#1a1b26",
+	selection_bg = "#283457",
+	selection_fg = "#c0caf5",
+	split = "#7aa2f7",
+	compose_cursor = "#ff9e64",
+	scrollbar_thumb = "#292e42",
+
+	ansi = { "#15161e", "#f7768e", "#9ece6a", "#e0af68", "#7aa2f7", "#bb9af7", "#7dcfff", "#a9b1d6" },
+	brights = { "#414868", "#ff899d", "#9fe044", "#faba4a", "#8db0ff", "#c7a9ff", "#a4daff", "#c0caf5" },
+
 	indexed = {
 		[136] = "#bd976a",
 	},
