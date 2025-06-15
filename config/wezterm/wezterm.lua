@@ -7,11 +7,6 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
-wezterm.on("gui-startup", function(cmd)
-	local tab, pane, window = wezterm.mux.spawn_window(cmd or {})
-	window:gui_window():maximize()
-end)
-
 -- config.color_scheme = 'rose-pine-moon'
 config.window_decorations = "RESIZE"
 config.font = wezterm.font("MartianMono Nerd Font", { weight = "Regular", stretch = "Normal" })
@@ -23,8 +18,8 @@ config.window_padding = {
 	top = 24,
 	bottom = 16,
 }
-config.initial_cols = 120
-config.initial_rows = 40
+config.initial_cols = 150
+config.initial_rows = 50
 config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = false
 config.pane_select_font_size = 36

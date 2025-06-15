@@ -12,7 +12,6 @@
   rebase = true
 
 [core]
-  pager = delta
   excludesfile = ~/.gitignore_global
   compression = 5
 
